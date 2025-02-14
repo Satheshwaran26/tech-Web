@@ -65,8 +65,8 @@ const CourseNavbar: React.FC = () => {
   }, [activeSection]);
 
   return (
-    <div className="w-full shadow-sm sticky top-0 bg-white z-50 border-b-2 border-gray-100 border-t-2 text-md">
-      <nav ref={navRef} className="w-full px-5 md:px-32 overflow-x-auto scrollbar-hide">
+    <div className="w-full shadow-sm sticky top-20 bg-[#080808]    border-b-2 border-[#212020] border-t-2 text-md ">
+      <nav ref={navRef} className="w-full px-5 md:px-32 overflow-x-auto scrollbar-hide ">
         <ul className="flex whitespace-nowrap md:flex-wrap gap-4 md:gap-8">
           {sections.map(({ id, name }) => (
             <li key={id} className="flex-shrink-0">
@@ -77,7 +77,7 @@ const CourseNavbar: React.FC = () => {
                 duration={500}
                 offset={-70}
                 data-section={id}
-                className={`block cursor-pointer p-4 font-medium text-center transition-colors duration-300 ${
+                className={`block cursor-pointer p-4 font-extralight text-lg text-center text-[#d0d0d0] transition-colors duration-300 ${
                   activeSection === id ? "bg-blue-100 text-semibold" : ""
                 }`}
                 activeClass="active"

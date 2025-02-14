@@ -63,53 +63,53 @@ const CourseForm: React.FC<CourseFormProps> = ({ courseName, coursePrice }) => {
   };
 
   return (
-    <div id="enroll" className="relative bg-white lg:mt-10 text-black border-2 border-gray-200 p-6 w-full rounded-2xl">
-      <h1 className="absolute top-[-1.5rem] left-1/2 transform -translate-x-1/2 border-2 border-gray-200 text-gray-800 font-medium bg-white text-center p-2 rounded-md">
+    <div id="enroll" className="relative bg-[#080808]   lg:mt-10 text-black border-2 border-[#212020] p-6 w-full rounded-2xl">
+      <h1 className="absolute top-[-1.5rem] left-1/2 transform -translate-x-1/2 border-2 border-[#212020] text-[#d0d0d0] font-extralight bg-[#080808] text-center p-2 rounded-md">
         Premium Course
       </h1>
-      <h3 className="text-2xl font-semibold mb-6 text-center pt-6">
+      <h3 className="text-3xl font-extralight mb-6 text-center pt-6 text-[#d0d0d0]">
         Get this Course @ {coursePrice}
       </h3>
 
       <form className="space-y-4" onSubmit={handleSubmit}>
         <div>
-          <label className="block text-gray-700">Course Name</label>
+          <label className="block text-[#d0d0d0d0] font-extralight mb-1">Course Name</label>
           <input
             type="text"
             value={courseName}
-            className="w-full px-4 py-2 border rounded-md bg-gray-200 cursor-not-allowed"
+            className="w-full px-4 py-2 border  border-[#212020] rounded-md bg-[#080808] cursor-not-allowed text-[#9e9d9d]"
             disabled
           />
         </div>
         <div>
-          <label className="block text-gray-700">Name</label>
+          <label className="block text-[#d0d0d0d0] font-extralight mb-1">Name</label>
           <input
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400"
+            className="w-full px-4 py-2 border  border-[#212020] rounded-md bg-[#080808] cursor-not-allowed placeholder-[#d0d0d0] font-extralight"
             placeholder="Enter your name"
             required
           />
         </div>
         <div>
-          <label className="block text-gray-700">Email ID</label>
+          <label className="block text-[#d0d0d0d0] font-extralight mb-1">Email ID</label>
           <input
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400"
+            className="w-full px-4 py-2 border  border-[#212020] rounded-md bg-[#080808] cursor-not-allowed  placeholder-[#d0d0d0] font-extralight"
             placeholder="Enter your email"
             required
           />
         </div>
         <div>
-          <label className="block text-gray-700">Phone Number</label>
+          <label className="block text-[#d0d0d0d0] font-extralight mb-1">Phone Number</label>
           <input
             type="tel"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
-            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400"
+            className="w-full px-4 py-2 border  border-[#212020] rounded-md bg-[#080808] cursor-not-allowed font-extralight placeholder-[#d0d0d0]"
             placeholder="Enter your phone number"
             required
           />
@@ -118,13 +118,16 @@ const CourseForm: React.FC<CourseFormProps> = ({ courseName, coursePrice }) => {
         {error && <p className="text-red-500">{error}</p>}
         {successMessage && <p className="text-green-500">{successMessage}</p>}
 
-        <button
-          type="submit"
-          className="w-full bg-gray-800 text-white font-normal text-md py-2 rounded-md"
-          disabled={loading}
-        >
-          {loading ? "Submitting..." : "Enroll Now"}
-        </button>
+        <div className="flex justify-center"> {/* Centering the button */}
+  <button
+    type="submit"
+    className="px-3 flex items-center justify-center bg-[#080808] text-orange-400 border border-[#9e9d9d] font-normal text-md py-2 rounded-md"
+    disabled={loading}
+  >
+    {loading ? "Submitting..." : "Enroll Now"}
+  </button>
+</div>
+
       </form>
     </div>
   );

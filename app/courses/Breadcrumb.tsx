@@ -2,6 +2,8 @@
 
 import { useRouter } from "next/navigation";
 import { FaChevronRight } from "react-icons/fa";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHouse } from "@fortawesome/free-solid-svg-icons"; // Import the house icon
 import React from "react";
 
 // Define interfaces for props and items
@@ -30,18 +32,21 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({
     <div className={`flex items-center text-[10px] md:text-base ${marginX} mb-4 text-black`}>
       {items.map((item, index) => (
         <React.Fragment key={index}>
+          {index === 0 && ( // Show home icon only for the first item
+            <FontAwesomeIcon icon={faHouse} className="text-white mr-2" />
+          )}
           <p
             onClick={() => !item.isActive && handleNavigation(item.link)}
-            className={`font-medium cursor-pointer transition text-black duration-300 ease-in-out ${
+            className={`font-extralight cursor-pointer transition text-white duration-300 ease-in-out ${
               item.isActive 
-                ? "text-black" 
-                : "hover:text-black hover:underline underline-offset-2"
+                ? "text-[#d0d0d0]" 
+                : "hover:text-white hover:underline underline-offset-2"
             }`}
           >
             {item.label}
           </p>
           {index < items.length - 1 && (
-            <FaChevronRight className="md:mx-2 mx-1 text-black" />
+            <FaChevronRight className="md:mx-2 mx-1 text-white" />
           )}
         </React.Fragment>
       ))}

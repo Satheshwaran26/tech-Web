@@ -23,7 +23,7 @@ const AboutCourse: React.FC<AboutCourseProps> = ({ courseId }) => {
   ];
 
   return (
-    <div id="about" className="mt-5 py-8 px-6 md:px-12 lg:px-40 bg-white text-black">
+    <div id="about" className="mt-5 py-8 px-6 md:px-12 lg:px-40 bg-[#080808]  ">
       <div className=" mx-auto text-center md:text-left">
         <h1 className="font-normal text-4xl md:text-5xl leading-tight mt-6 border-b-[2px] border-gray-950 pb-3">
           Course Overview

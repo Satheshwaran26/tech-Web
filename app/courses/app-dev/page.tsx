@@ -47,30 +47,30 @@ const Fullstack: React.FC = () => {
   ];
 
   return (
-    <div id="hero" className="flex flex-col relative">
-      <div className="px-6 py-12 lg:pt-16 lg:px-28 text-white relative">
+    <div id="hero" className="flex flex-col relative bg-[#080808]">
+      <div className="px-6 py-12 lg:pt-16 lg:px-28  relative ">
         {/* Breadcrumb */}
         <Breadcrumb items={breadcrumbItems} marginX="md:mx-10" />
 
         <div className="flex flex-col lg:flex-row items-start justify-between">
           <div className="lg:w-3/4 w-full md:px-10 lg:pt-8">
-            <h1 className="text-xl lg:text-5xl font-normal underline underline-offset-3 text-yellow-500 leading-tight mb-2 md:mb-4">
+            <h1 className="text-xl lg:text-5xl font-extralight underline underline-offset-3 bg-gradient-to-r from-orange-400 to-red-400 text-transparent bg-clip-text leading-tight mb-2 md:mb-4">
               {course.name}
             </h1>
             <p
-              className="md:text-lg text-sm font-medium text-gray-500 mb-6"
+              className="md:text-xl text-sm font-extralight text-white mb-6"
               dangerouslySetInnerHTML={{ __html: course.tagline }}
             ></p>
             <p
-              className="text-gray-700 mb-8  md:text-xl md:w-[90%]"
+              className="text-[#9e9d9d] mb-8 font-extralight md:text-xl md:w-[90%]"
               dangerouslySetInnerHTML={{ __html: course.description }}
             ></p>
 
-            <h1 className="text-gray-600 text-xl md:text-2xl font-semibold">Buy this course @</h1>
-            <div className="text-xl md:text-2xl font-semibold flex gap-2 md:gap-4">
-              <h1 className="line-through text-gray-600">{course.originalPrice}</h1>
-              <span className="text-yellow-500">{course.price}</span>
-              <button className="bg-[#fef7cd] text-[#cf9203] rounded-full text-xs md:text-base p-2 md:py-2 md:px-4">
+            <h1 className="text-[#d0d0d0d0] text-xl md:text-2xl font-normal">Buy this course @</h1>
+            <div className="text-xl md:text-2xl font-normal flex gap-2 md:gap-4">
+              <h1 className="line-through ">{course.originalPrice}</h1>
+              <span className=" bg-gradient-to-r from-orange-400 to-red-400 text-transparent bg-clip-text">{course.price}</span>
+              <button className="bg-[#1c1c1c] border border-[#d0d0d0d0] text-[#9e9d9d] rounded-full text-xs md:text-base p-2 md:py-2 md:px-4">
                 You save {course.savings}!
               </button>
             </div>
@@ -83,7 +83,7 @@ const Fullstack: React.FC = () => {
         <CourseForm courseName={course.name} coursePrice={course.price} />
       </div>
 
-      <div className="bg-white">
+      <div className="bg-[#080808]">
         <CourseNavbar />
 
         <div className='lg:w-3/4'>

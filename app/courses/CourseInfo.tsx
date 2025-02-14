@@ -38,7 +38,7 @@ const CourseInfo: React.FC<CourseInfoProps> = ({ courseId }) => {
 
   return (
     <motion.div
-      className="course-info border-2 border-gray-200 rounded-2xl mt-5 p-4 text-gray-600"
+      className="course-info border-2 border-[#212020] rounded-2xl mt-5 p-4 text-gray-600"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5, ease: "easeInOut" }}
@@ -46,37 +46,37 @@ const CourseInfo: React.FC<CourseInfoProps> = ({ courseId }) => {
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {/* Modules Info */}
         <div className="flex flex-col items-center space-y-1 relative">
-          <p className="text-lg font-medium course-info-head">
+          <p className="text-lg font-extralight course-info-head text-orange-400">
             {course.modules} Modules
           </p>
-          <p className="text-sm text-gray-400">with Certifications</p>
+          <p className="text-base font-extralight text-white">with Certifications</p>
           <div className="block absolute right-0 top-0 bottom-0 w-[1px] bg-gray-400"></div>
         </div>
 
         {/* Duration Info */}
         <div className="flex flex-col items-center space-y-1 relative">
-          <p className="text-lg font-medium course-info-head">
+          <p className="text-lg font-extralight course-info-head text-orange-400">
             {course.duration}
           </p>
-          <p className="text-sm text-gray-400">of Live Learning</p>
+          <p className="text-base font-extralight text-white">of Live Learning</p>
           <div className="hidden md:block absolute right-0 top-0 bottom-0 w-[1px] bg-gray-400"></div>
         </div>
 
         {/* Ratings Info */}
         <div className="flex flex-col items-center space-y-1 relative">
-          <p className="text-lg font-medium course-info-head">
+          <p className="text-lg font-extralight course-info-head text-orange-400">
             {course.ratings} Ratings
           </p>
-          <p className="text-sm text-gray-400">by {course.ratingsCount} Learners</p>
+          <p className="text-base font-extralight text-white">by {course.ratingsCount} Learners</p>
           <div className="block absolute right-0 top-0 bottom-0 w-[1px] bg-gray-400"></div>
         </div>
 
         {/* Language Info */}
         <div className="flex flex-col items-center space-y-1">
-          <p className="text-lg font-medium course-info-head">
+          <p className="text-lg font-extralight course-info-head text-orange-400">
             {course.language}
           </p>
-          <p className="text-sm text-gray-400">Language</p>
+          <p className="text-base font-extralight text-white">Language</p>
         </div>
       </div>
     </motion.div>

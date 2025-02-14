@@ -18,7 +18,7 @@ const courseData = [
         name: "Full Stack Web Development",
         price: "₹15000",
         tagline: "Become the Developer Companies Need",
-        description: `Struggling to get noticed by tech companies because you're <span class='text-[#fcbf07] font-medium'>missing critical skills?</span> Wondering why job offers never come despite your efforts? Unlock the door to endless career opportunities with our Full Stack Web Development course. From creating eye-catching frontends to building robust backends, you’ll become proficient in the technologies that a job needs.`,
+        description: `Struggling to get noticed by tech companies because you're <span class=' bg-gradient-to-r from-orange-400 to-red-400 text-transparent bg-clip-text font-normal'>missing critical skills?</span> Wondering why job offers never come despite your efforts? Unlock the door to endless career opportunities with our Full Stack Web Development course. From creating eye-catching frontends to building robust backends, you’ll become proficient in the technologies that a job needs.`,
         about: "Master the art of building modern web applications with Divine Infotech’s Full Stack Web Development course. Learn front-end and back-end technologies, including HTML, CSS, JavaScript, React, Node.js, Express, and MongoDB. This course takes you through designing responsive user interfaces to creating dynamic and scalable servers. With hands-on projects, you’ll develop real-world web solutions and gain the skills needed to become a versatile full-stack developer, ready to tackle the demands of the tech industry.",
         savings: "₹10,000",
         originalPrice: "₹25,000",

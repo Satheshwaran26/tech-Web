@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { FaChevronLeft, FaChevronRight, FaStar } from 'react-icons/fa';
 import Head from 'next/head';
+import Image from 'next/image'; // Import the Image component from next/image
 
 interface Review {
   id: number;
@@ -98,10 +99,12 @@ export default function TestimonialsPage() {
               <div className="relative bg-white rounded-lg shadow-lg p-8 max-w-xl w-full">
                 {/* Green icon in the top-left corner (overlapping) */}
                 <div className="absolute -top-6 -left-6">
-                  <img
+                  <Image
                     src={currentReview.avatar}
                     alt="Green Icon"
-                    className="w-12 h-12 rounded-full"
+                    width={48} // Set width and height for Image component
+                    height={48}
+                    className="rounded-full"
                   />
                 </div>
 
@@ -143,12 +146,12 @@ export default function TestimonialsPage() {
 
                 {/* Company Logo */}
                 <div className="mt-4">
-                  <img
+                  <Image
                     src={currentReview.companyLogo}
                     alt="Company Logo"
-                    className="mx-auto"
-                    width={100}
+                    width={100} // Set width and height for Image component
                     height={50}
+                    className="mx-auto"
                   />
                 </div>
               </div>

@@ -25,18 +25,18 @@ const AboutCourse: React.FC<AboutCourseProps> = ({ courseId }) => {
   return (
     <div id="about" className="mt-5 py-8 px-6 md:px-12 lg:px-40 bg-[#080808]  ">
       <div className=" mx-auto text-center md:text-left">
-        <h1 className="font-normal text-4xl md:text-5xl leading-tight mt-6 border-b-[2px] border-gray-950 pb-3">
+        <h1 className="font-extralight text-4xl md:text-5xl mt-6 pb-3 text-[#d0d0d0d0]">
           Course Overview
         </h1>
-        <p className="mt-6 text-lg text-gray-800 leading-relaxed">{course.about}</p>
+        <p className="mt-6 text-lg text-[#9e9d9d] font-extralight leading-relaxed">{course.about}</p>
         <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
           {coursePoints.map((point, index) => (
             <div
               key={index}
-              className="flex items-center gap-3 text-lg bg-gray-100 p-4 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
+              className="flex items-center gap-3 text-lg border-2 border-[#212020] p-4 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
             >
-              <CheckCircle className="text-gray-600 w-6 h-6" />
-              <span className="font-medium">{point}</span>
+              <CheckCircle className="text-orange-400 w-6 h-6" />
+              <span className="font-noraml text-[#9e9d9d]">{point}</span>
             </div>
           ))}
         </div>

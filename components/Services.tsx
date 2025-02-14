@@ -31,7 +31,7 @@ export default function Solutions() {
         <div className="md:w-1/2 flex flex-col gap-6">
           {/* App Development */}
           <div className="flex items-center gap-4 p-5 rounded-lg shadow-sm hover:shadow-md transition">
-            <FontAwesomeIcon icon={faAndroid} className="text-green-600 text-4xl p-3" />
+            <FontAwesomeIcon icon={faAndroid} className="text-green-600 text-3xl p-3" />
             <div>
               <h3 className="text-xl font-extralight pb-2 text-[#d0d0d0]">App Development</h3>
               <p className="text-[#747373]">

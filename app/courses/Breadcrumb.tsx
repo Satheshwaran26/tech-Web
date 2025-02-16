@@ -37,10 +37,10 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({
           )}
           <p
             onClick={() => !item.isActive && handleNavigation(item.link)}
-            className={`font-extralight cursor-pointer transition text-white duration-300 ease-in-out ${
+            className={`font-extralight cursor-pointer transition text-[#d0d0d0] duration-300 ease-in-out ${
               item.isActive 
-                ? "text-[#d0d0d0]" 
-                : "hover:text-white hover:underline underline-offset-2"
+                ? "text-orange-400" 
+                : "hover:text-[#d0d0d0] hover:underline underline-offset-2"
             }`}
           >
             {item.label}

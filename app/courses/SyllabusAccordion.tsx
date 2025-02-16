@@ -22,7 +22,7 @@ const SyllabusAccordion: React.FC<{ courseId: number }> = ({ courseId }) => {
   return (
     <div id="syllabus" className=" bg-[#080808] py-12 lg:px-40 text-left">
       <div className="mx-auto">
-        <h2 className="font-extralight text-[#d0d0d0d0] text-4xl md:text-5xl mb-8">Topics You Will Learn</h2>
+        <h2 className="font-extralight  bg-gradient-to-r from-orange-400 to-red-400 text-transparent bg-clip-text  text-4xl md:text-5xl mb-8">Topics You Will Learn</h2>
         <div className="space-y-6">
           {course.syllabus.map((phase: { phase: string; topics: TopicDetail[] }, index: number) => (
             <div key={index} className="border-2 border-[#212020] rounded-lg shadow-md overflow-hidden">

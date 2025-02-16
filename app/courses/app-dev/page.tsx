@@ -89,36 +89,39 @@ const Fullstack: React.FC = () => {
         <div className='lg:w-3/4'>
           <AboutCourse courseId="1" />
           <SyllabusAccordion courseId={1} />
-         
+
           <Benefits />
+
         </div>
-        <CertificateSection />
+        <CertificateSection /></div>
+      <div className='lg:w-3/4'>
         <Faq courseId="1" />
-        <div className="flex justify-center items-center py-4 lg:w-3/4 gap-2">
-          <button
-            onClick={() => {
-              if (window.innerWidth >= 1024) {
-                window.scrollTo({ top: 0, behavior: "smooth" });
-              } else {
-                const enrollElement = document.getElementById("enroll");
-                if (enrollElement) {
-                  enrollElement.scrollIntoView({ behavior: "smooth" });
-                }
+
+      <div className="flex justify-center items-center py-4 lg:w-3/4 gap-2">
+        <button
+          onClick={() => {
+            if (window.innerWidth >= 1024) {
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            } else {
+              const enrollElement = document.getElementById("enroll");
+              if (enrollElement) {
+                enrollElement.scrollIntoView({ behavior: "smooth" });
               }
-            }}
-            className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 transition-all duration-300 rounded-md"
-          >
-            Enroll Now
-          </button>
-          <button
-            onClick={() => router.push("/contactform")}
-            className="bg-transparent text-blue-600 border transition-all duration-300 border-blue-600 hover:bg-blue-600 hover:text-white px-4 py-2 rounded-md"
-          >
-            Request a Callback ?
-          </button>
-        </div>
+            }
+          }}
+          className="   bg-gradient-to-r from-orange-400 to-red-400 text-transparent bg-clip-text  border-2  border-[#212020] px-4 py-2 transition-all duration-300 rounded-md"
+        >
+          Enroll Now
+        </button>
+        <button
+          onClick={() => router.push("/contactform")}
+          className="bg-transparent text-[#d0d0d0d0] font-extralight  border-2 transition-all duration-300 border-[#212020] px-4 py-2 rounded-md"
+        >
+          Request a Callback ?
+        </button>
       </div>
     </div>
+    </div >
   );
 };
 

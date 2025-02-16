@@ -61,7 +61,7 @@ const WhyUs: React.FC = () => {
   };
 
   return (
-    <div className="bg-gradient-to-b from-[#0a0a0f] via-[#0d0c13] to-[#0a0a0f] relative overflow-hidden">
+    <div className="bg-[#080808] relative overflow-hidden">
       {/* Background subtle grid pattern */}
       <div className="absolute inset-0 bg-[url('/grid.png')] opacity-5"></div>
       
@@ -73,7 +73,7 @@ const WhyUs: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-20"
         >
-          <h2 className="text-5xl font-bold bg-gradient-to-r from-white via-gray-200 to-gray-400 text-transparent bg-clip-text">
+          <h2 className="text-5xl font-extralight bg-gradient-to-r from-white via-gray-200 to-gray-400 text-transparent bg-clip-text">
             Why Choose Us?
           </h2>
         </motion.div>
@@ -91,21 +91,21 @@ const WhyUs: React.FC = () => {
               variants={itemVariants}
               className="group relative"
             >
-              <div className="bg-[#1a1a24] rounded-xl p-6 h-full transform transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-pink-500/10">
+              <div className="bg-[#080808] rounded-xl p-6 h-full transform transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-orange-500/10 border-2 border-[#212020]">
                 <div className="flex items-start space-x-4">
                   <div className="flex-shrink-0">
-                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-pink-500 to-purple-600 flex items-center justify-center">
+                    <div className="w-10 h-10 bg-[#1f1e1e]    rounded-lg  flex items-center justify-center">
                       <FontAwesomeIcon
                         icon={faCheck}
-                        className="text-white text-lg"
+                        className="text-[#929292] text-lg"
                       />
                     </div>
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-white mb-3 bg-gradient-to-r from-white to-gray-300 bg-clip-text">
+                    <h3 className="text-xl font-extralight text-white mb-3 bg-gradient-to-r from-white to-gray-300 bg-clip-text">
                       {reason.title}
                     </h3>
-                    <p className="text-gray-400 leading-relaxed">
+                    <p className="text-[#]  font-normal leading-relaxed">
                       {reason.description}
                     </p>
                   </div>

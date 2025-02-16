@@ -47,19 +47,19 @@ const FAQ: React.FC<FAQComponentProps> = ({ courseId }) => {
   }
 
   return (
-    <div id="faq" className="bg-[#f6f7f8] py-8 px-4 md:px-8 lg:px-40">
-      <h2 className="text-3xl text-center font-bold mb-6">
+    <div id="faq" className="bg-[#080808] py-8 px-4 md:px-8 lg:px-40 font-extralight">
+      <h2 className="text-4xl text-center mb-6 text-[#d0d0d0]">
         Still Having
         <span className="relative inline-block ml-2">
-          <span className="relative z-10 text-blue-600 mr-2">Doubts?</span>
-          <span className="absolute inset-0 z-0 bg-blue-100 h-4 transform translate-y-4"></span>
+          <span className="relative z-10 text-orange-400 mr-2">Doubts?</span>
+
         </span>
       </h2>
 
       <div className="space-y-4">
         {faqs.length > 0 ? (
           faqs.map((faq, index) => (
-            <div key={index} className="border-b-2">
+            <div key={index} className="border-b-2 border-[#212020]">
               <button
                 className="flex justify-between items-center w-full text-left p-4 cursor-pointer focus:outline-none"
                 onClick={() => toggleFAQ(index)}
@@ -67,8 +67,8 @@ const FAQ: React.FC<FAQComponentProps> = ({ courseId }) => {
                 aria-expanded={activeIndex === index}
                 aria-controls={`faq-content-${index}`}
               >
-                <h3 className="md:text-lg text-sm font-medium text-gray-800">{faq.question}</h3>
-                <span className="text-xl">{activeIndex === index ? "-" : "+"}</span>
+                <h3 className="md:text-lg text-sm  text-[#ffffff]">{faq.question}</h3>
+                <span className="text-xl text-[#d0d0d0d0]">{activeIndex === index ? "-" : "+"}</span>
               </button>
 
               <div
@@ -78,7 +78,7 @@ const FAQ: React.FC<FAQComponentProps> = ({ courseId }) => {
                   activeIndex === index ? "max-h-screen" : "max-h-0"
                 }`}
               >
-                <div className="p-4 text-sm md:text-base text-gray-600">
+                <div className="p-4 text-sm md:text-base text-[#9e9d9d]">
                   <p>{faq.answer}</p>
                 </div>
               </div>

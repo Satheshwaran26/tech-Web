@@ -87,7 +87,7 @@ const CourseForm: React.FC<CourseFormProps> = ({ courseName, coursePrice }) => {
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="w-full px-4 py-2 border  border-[#212020] rounded-md bg-[#080808] cursor-not-allowed placeholder-[#d0d0d0] font-extralight"
+            className="w-full px-4 py-2 border  border-[#212020] rounded-md bg-[#080808] cursor placeholder-[#d0d0d0] font-extralight"
             placeholder="Enter your name"
             required
           />
@@ -98,7 +98,7 @@ const CourseForm: React.FC<CourseFormProps> = ({ courseName, coursePrice }) => {
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full px-4 py-2 border  border-[#212020] rounded-md bg-[#080808] cursor-not-allowed  placeholder-[#d0d0d0] font-extralight"
+             className="w-full px-4 py-2 border  border-[#212020] rounded-md bg-[#080808] cursor placeholder-[#d0d0d0] font-extralight"
             placeholder="Enter your email"
             required
           />
@@ -109,7 +109,7 @@ const CourseForm: React.FC<CourseFormProps> = ({ courseName, coursePrice }) => {
             type="tel"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
-            className="w-full px-4 py-2 border  border-[#212020] rounded-md bg-[#080808] cursor-not-allowed font-extralight placeholder-[#d0d0d0]"
+            className="w-full px-4 py-2 border  border-[#212020] rounded-md bg-[#080808] cursor font-extralight placeholder-[#d0d0d0]"
             placeholder="Enter your phone number"
             required
           />

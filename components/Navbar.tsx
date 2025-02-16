@@ -9,7 +9,9 @@ const Navbar: React.FC = () => {
   const [isProductDropdownOpen, setIsProductDropdownOpen] = useState(false);
 
   return (
-    <nav className="bg-[#080808] sticky top-0 z-50 py-4 ">
+    
+    <nav className="sticky top-0 z-50 py-4 ">
+      
       <div className="max-w-[1800px] mx-auto px-6 flex justify-between items-center">
         {/* Logo */}
         <div className="flex-shrink-0 flex items-center font-light text-xl">

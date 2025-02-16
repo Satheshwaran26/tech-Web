@@ -16,8 +16,9 @@ const CourseNavbar: React.FC = () => {
   const sections: Section[] = useMemo(() => [
     { id: "about", name: "About" },
     { id: "syllabus", name: "Syllabus" },
-    { id: "certificate", name: "Certificate" },
+    
     { id: "benefits", name: "Bonus" },
+    { id: "certificate", name: "Certificate" },
     { id: "testimony", name: "Testimony" },
     { id: "faq", name: "FAQ" },
   ], []);
@@ -78,7 +79,7 @@ const CourseNavbar: React.FC = () => {
                 offset={-70}
                 data-section={id}
                 className={`block cursor-pointer p-4 font-extralight text-lg text-center text-[#d0d0d0] transition-colors duration-300 ${
-                  activeSection === id ? "bg-blue-100 text-semibold" : ""
+                  activeSection === id ? "text-orange-400 text-semibold underline underline-offset-4" : ""
                 }`}
                 activeClass="active"
                 href={`#${id}`} 

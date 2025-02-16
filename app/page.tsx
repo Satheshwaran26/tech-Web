@@ -23,10 +23,10 @@ const Home: NextPage = () => {
         <meta name="description" content="Next-Generation AI Tools for Smarter Business" />
       </Head>
       <HeroSection />
-      <DashboardImage />
+    
       <TrustedBrands />
 
-      <Services />
+
       <ExploreCourses />
       <TextFloat/>
       <WhyUs />

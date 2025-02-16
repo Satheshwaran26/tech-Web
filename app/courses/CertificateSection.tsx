@@ -10,12 +10,12 @@ const CertificateSection: React.FC = () => {
     <div id="certificate" className="lg:w-3/4 py-12 px-4 sm:px-6 lg:px-40">
       {/* Heading Section */}
       <div className="py-5 pt-5">
-        <h2 className="py-4 text-left font-bold text-black text-3xl md:text-4xl leading-tight">
+        <h2 className="py-4 text-left font-extralight text-[#9e9d9d] text-3xl md:text-4xl leading-tight">
           Let Your
-          <span className="relative inline-block ml-2">
-            <span className="relative z-10 text-blue-600 mr-2">Certificates</span>
-            <span className="absolute inset-0 z-0 bg-blue-100 h-3 transform translate-y-2"></span>
-          </span>
+  
+             <span className=" text-orange-400 mr-2"> Certificates</span>
+
+          
           Speak
         </h2>
       </div>
@@ -25,11 +25,11 @@ const CertificateSection: React.FC = () => {
         {/* Left side: Certificate image and shareable text */}
         <div>
           <div className="flex justify-center">
-            <div className="border-2 border-gray-300 rounded-lg p-4 shadow-lg">
+            <div className="border-2      border-[#212020] rounded-lg p-4 shadow-lg">
               <Image
                 src={CertificateImg}
                 alt="Certificate"
-                className="w-full h-auto"
+                className="w-full h-auto rounded-md"
                 width={500} // Adjust as needed
                 height={300} // Adjust as needed
                 priority
@@ -37,10 +37,10 @@ const CertificateSection: React.FC = () => {
             </div>
           </div>
           <div className="mt-4">
-            <p className="text-sm flex justify-center items-center text-gray-500">
+            <p className="text-base flex  font-extralight justify-center items-center text-[#d0d0d0]">
               Shareable on
-              <span className="ml-2 font-bold text-blue-700 text-xl flex items-center">
-                LinkedIn <FaLinkedin className="text-2xl text-blue-700 ml-1" />
+              <span className="ml-2 font-normal text-orange-400 text-xl flex items-center">
+                LinkedIn <FaLinkedin className="text-2xl text-orange-400 ml-2" />
               </span>
             </p>
           </div>
@@ -54,8 +54,8 @@ const CertificateSection: React.FC = () => {
             "Certificates are generated after the completion of course.",
           ].map((text, index) => (
             <div key={index} className="flex items-start">
-              <FaCaretRight className="text-blue-500 mr-3 mt-1 flex-shrink-0" />
-              <p className="text-base text-gray-700">{text}</p>
+              <FaCaretRight className="text-orange-400 mr-3 mt-1 flex-shrink-0" />
+              <p className="text-base font-extralight text-[#d0d0d0]">{text}</p>
             </div>
           ))}
         </div>

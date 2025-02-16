@@ -3,7 +3,6 @@ import Image from "next/image";
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
-// Define the course structure
 interface Course {
   title: string;
   description: string;
@@ -18,58 +17,54 @@ const ExploreCourses = () => {
   const [activeTab, setActiveTab] = useState('bestSelling');
   const router = useRouter();
 
-  // Data for best selling courses
   const bestSellingCourses: Course[] = [
     {
-      title: 'Become the Developer Companies Need',
+      title: 'Full Stack Web Development',
       description:
-        'Struggling to get noticed by tech companies? Our Full Stack Web Development Course covers everything from frontend to backend—HTML, CSS, JavaScript, React, Node.js, MongoDB, and more.',
-      shortDescription: 'Full Stack Web Development',
+        'Learn frontend and backend with HTML, CSS, JavaScript, React, Node.js, and MongoDB.',
+      shortDescription: 'Master Web Development',
       image: '/images/web.png',
-      alt: 'Full Stack Development Course Image',
+      alt: 'Web Development Course',
       rating: 4.5,
       path: '/courses/web-dev',
     },
     {
-      title: 'Master Mobile App Development',
+      title: 'App Development',
       description:
-        'Learn how to build high-performance mobile applications using React Native, Flutter, and native technologies.',
-      shortDescription: 'App Development',
+        'Build mobile apps using React Native, Flutter, and native tools.',
+      shortDescription: 'Mobile App Development',
       image: '/images/app.png',
-      alt: 'App Development Course Image',
+      alt: 'App Development Course',
       rating: 4.2,
       path: '/courses/app-dev',
     },
     {
-      title: 'Become a Python Pro',
+      title: 'Python Programming',
       description:
-        'Master Python programming from basics to advanced topics, including data science and AI applications.',
-      shortDescription: 'Python Development',
+        'Learn Python from basics to advanced with data science and AI applications.',
+      shortDescription: 'Python for Developers',
       image: '/images/python (2).png',
-      alt: 'Python Development Course Image',
+      alt: 'Python Course',
       rating: 4.8,
       path: '/courses/software-dev',
     },
   ];
 
-  // Data for other courses
   const otherCourses: Course[] = [
     {
-      title: 'Digital Marketing Mastery',
+      title: 'Digital Marketing',
       description:
-        'Learn the secrets of SEO, content marketing, and paid advertising to grow your online presence.',
-      shortDescription: 'Digital Marketing',
+        'Master SEO, content marketing, and paid ads to grow your brand.',
+      shortDescription: 'Marketing Strategies',
       image: '/assets/digital.jpeg',
-      alt: 'Digital Marketing Course Image',
+      alt: 'Digital Marketing Course',
       rating: 4.1,
       path: '/courses/digital-marketing',
     },
   ];
 
-  // Empty array for free courses
   const freeCourses: Course[] = [];
 
-  // Function to render courses
   const renderCourses = (courses: Course[]) => {
     return courses.map((course, index) => {
       const fullStars = Math.floor(course.rating);
@@ -81,9 +76,9 @@ const ExploreCourses = () => {
             alt={course.alt}
             src={course.image}
             className='w-full h-56 object-cover rounded-lg'
-            width={400} // Added width and height for optimization
-            height={224} // Added width and height for optimization
-            priority // Optional: if you want to prioritize loading this image
+            width={400}
+            height={224}
+            priority
           />
           <h2 className='text-xl font-medium text-gray-300 mt-4'>{course.title}</h2>
           <p className='text-gray-400 my-2 text-lg'>{course.shortDescription}</p>
@@ -139,7 +134,7 @@ const ExploreCourses = () => {
 
           <div className='sm:hidden px-4'>
             <select
-              className='w-full px-4 py-3 border border-gray-500 rounded-full text-gray-300 bg-[#08080] focus:outline-none focus:ring-2  focus:ring-gray-500'
+              className='w-full px-4 py-3 border border-gray-500 rounded-full text-gray-300 bg-[#080808] focus:outline-none focus:ring-2 focus:ring-gray-500'
               value={activeTab}
               onChange={(e) => setActiveTab(e.target.value)}
             >

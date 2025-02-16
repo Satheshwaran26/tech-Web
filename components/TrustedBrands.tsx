@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import Marquee from "react-fast-marquee"; // Import react-fast-marquee
 
 const TrustedBrands: React.FC = () => {
   const [logos, setLogos] = useState<{ src: string; alt: string }[]>([]);
@@ -16,13 +15,13 @@ const TrustedBrands: React.FC = () => {
           data: [
             { src: "/images/gg.png", alt: "Canva Logo" },
             { src: "/images/zoho.png", alt: "Adobe Logo" },
-            { src: "/images/canva.png", alt: "Microsoft Logo" },
-            { src: "/images/canva.png", alt: "Google Logo" },
-            { src: "/images/canva.png", alt: "Apple Logo" },
-            { src: "/images/canva.png", alt: "Amazon Logo" },
+            { src: "/images/msi.png", alt: "Microsoft Logo" },
+            { src: "/images/gg.png", alt: "Canva Logo" },
+            { src: "/images/zoho.png", alt: "Adobe Logo" },
+            { src: "/images/msi.png", alt: "Microsoft Logo" },
           ],
         };
-        setLogos(response.data);
+        setLogos(response.data.slice(0, 6)); // Limit to 6 logos
       } catch (error) {
         console.error("Error fetching logos:", error);
       } finally {
@@ -34,31 +33,25 @@ const TrustedBrands: React.FC = () => {
   }, []);
 
   return (
-    <section className="bg-[#080808] py-16">
+    <section className="bg-[#080808] pt-28  ">
+      
       <div className="max-w-screen-full mx-auto text-center">
-        <h2 className="text-5xl font-light mb-16 text-[#676767] ">Brands That Trust Us</h2>
-        <div className="relative overflow-hidden">
+        <h2 className="text-3xl font-extralight mb-6 text-[#676767]">Brands That Trust Us</h2>
+        <div className="flex justify-center items-center gap-10">
           {isLoading ? (
             <p className="text-silver">Loading logos...</p>
           ) : (
-            <Marquee speed={50} gradient={false} className="flex items-center">
-              {/* Duplicate logos multiple times to ensure seamless scrolling */}
-              {logos.concat(logos, logos).map((logo, index) => (
-                <div
-                  key={index}
-                  className="flex items-center justify-center mx-6"
-                  style={{ flexShrink: 0 }}
-                >
-                  <Image
-                    src={logo.src}
-                    alt={logo.alt}
-                    width={80}
-                    height={80}
-                    className="object-contain"
-                  />
-                </div>
-              ))}
-            </Marquee>
+            logos.map((logo, index) => (
+              <div key={index} className="flex items-center justify-center">
+                <Image
+                  src={logo.src}
+                  alt={logo.alt}
+                  width={115}
+                  height={115}
+                  className="object-contain grayscale"
+                />
+              </div>
+            ))
           )}
         </div>
       </div>

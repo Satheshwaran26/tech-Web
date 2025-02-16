@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { FaUser, FaEnvelope, FaComment } from 'react-icons/fa';
-
+import Image from "next/image";
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
 
@@ -24,7 +24,7 @@ const Contact = () => {
           You will get here what you exactly need!
         </p>
         <div className="flex items-center">
-          <img 
+          <Image 
             src="/images/tino.png" 
             alt="Portrait of Aarav Dev" 
             className="w-12 h-12 rounded-full mr-4 border-2 border-[#9e9d9]"

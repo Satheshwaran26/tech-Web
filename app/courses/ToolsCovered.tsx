@@ -4,10 +4,6 @@ import React, { useRef, useEffect, useState } from 'react';
 import courseData from './courseData';
 import Image from 'next/image';
 
-interface Tool {
-    name: string;
-    logo: string;
-}
 
 
 interface ToolsCoveredProps {

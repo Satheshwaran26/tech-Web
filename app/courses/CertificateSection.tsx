@@ -39,8 +39,8 @@ const CertificateSection: React.FC = () => {
           <div className="mt-4">
             <p className="text-base flex  font-extralight justify-center items-center text-[#d0d0d0]">
               Shareable on
-              <span className="ml-2 font-normal text-orange-400 text-xl flex items-center">
-                LinkedIn <FaLinkedin className="text-2xl text-orange-400 ml-2" />
+              <span className="ml-2 font-normal text-blue-600 text-xl flex items-center">
+                LinkedIn <FaLinkedin className="text-2xl text-blue-600 ml-2" />
               </span>
             </p>
           </div>

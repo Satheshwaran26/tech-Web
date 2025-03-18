@@ -12,6 +12,7 @@ import postmanLogo from './postman.webp';
 import reactLogo from './react.webp';
 import tailwindLogo from './tailwind.webp';
 import vscodeLogo from './vscode.webp';
+
 const courseData = [
     {
         id: 1,
@@ -23,12 +24,12 @@ const courseData = [
         savings: "₹10,000",
         originalPrice: "₹25,000",
         salary: "12",
-        duration: "3 Months", // Add duration
-        modules: 4, // Add number of modules
-        ratings: 4.38, // Add ratings
-        ratingsCount: 2593, // Add ratings count
-        language: "Tamil/English", // Add language
-        syllabus: [ // Add syllabus data here
+        duration: "3 Months",
+        modules: 4,
+        ratings: 4.38,
+        ratingsCount: 2593,
+        language: "Tamil/English",
+        syllabus: [
             {
                 phase: "Phase 1: Frontend Foundations",
                 topics: [
@@ -135,24 +136,23 @@ const courseData = [
                 ]
             }
         ],
-        // Add tools data here
-            tools: [
-                { name: "AWS", logo: awsLogo },
-                { name: "Bootstrap", logo: bootstrapLogo },
-                { name: "CSS", logo: cssLogo },
-                { name: "Express JS", logo: expressLogo },
-                { name: "HTML", logo: htmlLogo },
-                { name: "JavaScript", logo: jsLogo },
-                { name: "MongoDB", logo: mongodbLogo },
-                { name: "Mongoose", logo: mongooseLogo },
-                { name: "MySQL", logo: mysqlLogo },
-                { name: "Node JS", logo: nodeLogo },
-                { name: "Postman", logo: postmanLogo },
-                { name: "React", logo: reactLogo },
-                { name: "Tailwind", logo: tailwindLogo },
-                { name: "VS Code", logo: vscodeLogo },
-              ],
-        faqs: [ // Add FAQ data here
+        tools: [
+            { name: "AWS", logo: awsLogo },
+            { name: "Bootstrap", logo: bootstrapLogo },
+            { name: "CSS", logo: cssLogo },
+            { name: "Express JS", logo: expressLogo },
+            { name: "HTML", logo: htmlLogo },
+            { name: "JavaScript", logo: jsLogo },
+            { name: "MongoDB", logo: mongodbLogo },
+            { name: "Mongoose", logo: mongooseLogo },
+            { name: "MySQL", logo: mysqlLogo },
+            { name: "Node JS", logo: nodeLogo },
+            { name: "Postman", logo: postmanLogo },
+            { name: "React", logo: reactLogo },
+            { name: "Tailwind", logo: tailwindLogo },
+            { name: "VS Code", logo: vscodeLogo },
+        ],
+        faqs: [
             {
                 question: "Is it 100% online learning or should I come in person for any specific course?",
                 answer: "It is a 100% online learning course package and there won’t be any necessity for you to be present in person."
@@ -190,7 +190,7 @@ const courseData = [
         ratings: 4.2,
         ratingsCount: 2300,
         language: 'Tamil/English',
-        syllabus: [ // Add syllabus data for Python Data Science
+        syllabus: [
             {
                 phase: "Phase 1: Data Science Fundamentals",
                 topics: [
@@ -275,17 +275,6 @@ const courseData = [
                 ]
             }
         ],
-        // tools: [
-        //     { name: "Python", logo: require('./img/python/python.png') },
-        //     { name: "MySql", logo: require('./img/python/mysql.webp') },
-        //     { name: "Tableau", logo: require('./img/python/tableau.png') },
-        //     { name: "Power BI", logo: require('./img/python/powerbi.png') },
-        //     { name: "Jupyter Notebook", logo: require('./img/python/jupyter-notebook.png') },
-        //     { name: "Pandas", logo: require('./img/python/pandas.png') },
-        //     { name: "Numpy", logo: require('./img/python/numpy.png') },
-        //     { name: "Scikit-Learn", logo: require('./img/python/scikit-learn.png') },
-        //     { name: "Machine Learning", logo: require('./img/python/machine-learning.png') },
-        // ], // Add tools data if needed for this course
         faqs: [
             {
                 question: "What prerequisites do I need for this course?",
@@ -307,9 +296,8 @@ const courseData = [
                 question: "Can I get help if I have questions during the course?",
                 answer: "Yes, you will have access to our support team and community forums for assistance."
             },
-        ], // Add FAQ data if needed for this course
+        ]
     },
-
     {
         id: 3,
         name: "Mobile App Development with Flutter",
@@ -325,7 +313,7 @@ const courseData = [
         ratings: 4.3,
         ratingsCount: 2300,
         language: "Tamil/English",
-        syllabus: [ // Add syllabus data for Mobile App Development with Flutter
+        syllabus: [
             {
                 phase: "Phase 1: Introduction to Flutter & Dart Basics",
                 topics: [
@@ -422,16 +410,16 @@ const courseData = [
                 ]
             }
         ],
-        // tools: [
-        //     { name: "Flutter", logo: require('./img/flutter/flutter.png') },
-        //     { name: "Dart", logo: require('./img/flutter/dart.png') },
-        //     { name: "Firebase", logo: require('./img/flutter/firebase.png') },
-        //     { name: "Android Studio", logo: require('./img/flutter/android-studio.png') },
-        //     { name: "Rest API", logo: require('./img/flutter/rest-api.png') },
-        //     { name: "Google Analytics", logo: require('./img/flutter/google-analytics.png') },
-        //     { name: "Figma", logo: require('./img/flutter/figma.png') },
-        // ], // Add tools data if needed for this course
-        faqs: [ // Add FAQ data for Mobile App Development with Flutter
+        tools: [
+            { name: "Flutter", logo: "./flutter.png", width: 100, height: 100 },
+            { name: "Dart", logo: "./dart.png", width: 100, height: 100 },
+            { name: "Firebase", logo: "./firebase.png", width: 100, height: 100 },
+            { name: "Android Studio", logo: "./android-studio.png", width: 100, height: 100 },
+            { name: "Rest API", logo: "./rest-api.png", width: 100, height: 100 },
+            { name: "Google Analytics", logo: "./google-analytics.png", width: 100, height: 100 },
+            { name: "Figma", logo: "./figma.png", width: 100, height: 100 },
+        ],
+        faqs: [
             {
                 question: "What prerequisites do I need for this course?",
                 answer: "The only prerequisite for learning Flutter Development at Divine Infotech is your commitment and determination to succeed. No prior technical knowledge is required, as the course is designed to guide you from the basics to advanced topics. Anyone with a passion and a desire to learn can enroll and thrive in this course."
@@ -452,9 +440,8 @@ const courseData = [
                 question: "Can I get help if I have questions during the course?",
                 answer: "Yes, you will have access to our support team and community forums for assistance."
             },
-        ], // Add FAQ data if needed for this course
+        ]
     }
-    // Add more courses as needed
 ];
 
 export default courseData;

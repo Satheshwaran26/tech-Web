@@ -137,7 +137,7 @@ const ExploreCourses = () => {
               className='w-full px-4 py-3 border border-gray-500 rounded-full text-gray-300 bg-[#080808] focus:outline-none focus:ring-2 focus:ring-gray-500'
               value={activeTab}
               onChange={(e) => setActiveTab(e.target.value)}
-            >
+            > 
               <option value='bestSelling'>Best Selling</option>
               <option value='otherCourses'>Other Courses</option>
               <option value='freeCourses'>Free Courses</option>

@@ -64,8 +64,8 @@ const CourseForm: React.FC<CourseFormProps> = ({ courseName, coursePrice }) => {
 
   return (
     <div id="enroll" className="relative bg-[#080808]   lg:mt-10 text-black border-2 border-[#212020] p-6 w-full rounded-2xl">
-      <h1 className="absolute top-[-1.5rem] left-1/2 transform -translate-x-1/2 border-2 border-[#212020] text-[#d0d0d0] font-extralight bg-[#080808] text-center p-2 rounded-md">
-        Premium Course
+      <h1 className="absolute top-[-1.5rem] left-1/2 transform -translate-x-1/2 border-2 border-[#212020] text-[#d0d0d0d0] font-extralight bg-[#080808] text-center p-2 rounded-md">
+      ⭐ Premium Course
       </h1>
       <h3 className="text-3xl font-extralight mb-6 text-center pt-6 text-[#d0d0d0]">
         Get this Course @ {coursePrice}

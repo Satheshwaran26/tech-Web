@@ -1,7 +1,7 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FaPlus, FaMinus } from "react-icons/fa";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const faqs = [
   { question: "What is Divine Infotech, and what does it do?", answer: "Divine Infotech is a pioneering career education startup specializing in developing innovative solutions in Web applications, Android applications, and Data Science projects. Our programs offer advanced training, hands-on practice, and expert guidance to help individuals and businesses grow." },
@@ -11,8 +11,58 @@ const faqs = [
   { question: "What kind of support does Divine Infotech technologies provide?", answer: "We offer 24/7 premium support to ensure seamless integration and continuous assistance for all our services." },
 ];
 
+// Animation variants
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.3,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      stiffness: 100,
+      damping: 12,
+    },
+  },
+};
+
+const contentVariants = {
+  hidden: { opacity: 0, height: 0 },
+  visible: { 
+    opacity: 1, 
+    height: "auto",
+    transition: {
+      duration: 0.4,
+      ease: [0.04, 0.62, 0.23, 0.98],
+    }
+  },
+  exit: { 
+    opacity: 0, 
+    height: 0,
+    transition: {
+      duration: 0.3,
+      ease: "easeInOut",
+    }
+  }
+};
+
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    setIsLoaded(true);
+  }, []);
 
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -21,43 +71,79 @@ export default function FAQ() {
   return (
     <div className="flex justify-center items-center pt-16 bg-[#080808] px-4">
       <div className="max-w-3xl w-full text-center">
-        <h1 className="text-5xl font-extralight text-[#d0d0d0] mb-4">Frequently Asked Questions</h1>
-        <p className="text-gray-400 mb-8">
+        <motion.h1 
+          className="text-5xl font-extralight text-[#d0d0d0] mb-4"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          Frequently Asked Questions
+        </motion.h1>
+        <motion.p 
+          className="text-gray-400 mb-8"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
           Explore our FAQs to learn more about how our product works, what it offers, and how it can help you achieve your team&apos;s goals.
-        </p>
+        </motion.p>
 
-        <div className="space-y-5">
+        <motion.div 
+          className="space-y-5"
+          variants={containerVariants}
+          initial="hidden"
+          animate={isLoaded ? "visible" : "hidden"}
+        >
           {faqs.map((faq, index) => (
-            <div
+            <motion.div
               key={index}
-              className={`border border-[#1c1c1c] rounded-lg p-4 cursor-pointer transition-all px-4 py-5
+              variants={itemVariants}
+              className={`border border-[#1c1c1c] rounded-lg cursor-pointer transition-all px-4 py-5
                 ${openIndex === index ? "bg-gradient-to-b from-[#101010] via-[#080808] to-[#080808]" : "bg-[#080808]"}`}
               onClick={() => toggleFAQ(index)}
+              whileHover={{ 
+               
+                borderColor: "#2a2a2a",
+                transition: { duration: 0.2 }
+              }}
+              whileTap={{ scale: 0.98 }}
             >
               <div className="flex justify-between items-center">
                 <h3 className="text-[#d0d0d0] text-lg">{faq.question}</h3>
-                {openIndex === index ? (
-                  <FaMinus className="text-[#d0d0d0] text-sm" />
-                ) : (
-                  <FaPlus className="text-[#d0d0d0] text-sm" />
-                )}
+                <motion.div
+                  animate={{ rotate: openIndex === index ? 180 : 0 }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                >
+                  {openIndex === index ? (
+                    <FaMinus className="text-[#d0d0d0] text-sm" />
+                  ) : (
+                    <FaPlus className="text-[#d0d0d0] text-sm" />
+                  )}
+                </motion.div>
               </div>
-              <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{
-                  opacity: openIndex === index ? 1 : 0,
-                  height: openIndex === index ? "auto" : 0,
-                }}
-                transition={{ duration: 0.3 }}
-                className="overflow-hidden"
-              >
+              <AnimatePresence>
                 {openIndex === index && (
-                  <p className="text-[#9e9d9d] mt-3 text-left">{faq.answer}</p>
+                  <motion.div
+                    variants={contentVariants}
+                    initial="hidden"
+                    animate="visible"
+                    exit="exit"
+                    className="overflow-hidden"
+                  >
+                    <motion.p 
+                      className="text-[#9e9d9d] mt-3 text-left"
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.3, delay: 0.1 }}
+                    >
+                      {faq.answer}
+                    </motion.p>
+                  </motion.div>
                 )}
-              </motion.div>
-            </div>
+              </AnimatePresence>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </div>
   );

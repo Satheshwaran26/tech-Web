@@ -13,7 +13,7 @@ import CourseNavbar from "../CourseNavbar";
 import Faq from "../FAQ";
 import Benefits from "../Benefits";
 import SyllabusAccordion from "../SyllabusAccordion";
-
+import ToolsCovered from "../ToolsCovered";
 import Link from "next/link"; // Import Link from next/link
 
 interface Course {
@@ -29,7 +29,7 @@ interface Course {
 
 const Fullstack: React.FC = () => {
   const router = useRouter();
-  const courseId = 1;
+  const courseId = 2;
   const course: Course | undefined = courseData.find((c) => c.id === courseId);
 
   if (!course) {
@@ -54,7 +54,7 @@ const Fullstack: React.FC = () => {
 
         <div className="flex flex-col lg:flex-row items-start justify-between">
           <div className="lg:w-3/4 w-full md:px-10 lg:pt-8">
-            <h1 className="text-xl lg:text-5xl font-extralight underline underline-offset-3 bg-gradient-to-r from-orange-400 to-red-400 text-transparent bg-clip-text leading-tight mb-2 md:mb-4">
+            <h1 className="text-xl lg:text-5xl font-semibold underline underline-offset-3 bg-gradient-to-r from-orange-400 to-red-400 text-transparent bg-clip-text leading-tight mb-2 md:mb-4">
               {course.name}
             </h1>
             <p
@@ -74,7 +74,7 @@ const Fullstack: React.FC = () => {
                 You save {course.savings}!
               </button>
             </div>
-            <CourseInfo courseId="1" /> {/* Pass courseId as a prop */}
+            <CourseInfo courseId="3" /> {/* Pass courseId as a prop */}
           </div>
         </div>
       </div>
@@ -87,15 +87,15 @@ const Fullstack: React.FC = () => {
         <CourseNavbar />
 
         <div className='lg:w-3/4'>
-          <AboutCourse courseId="1" />
-          <SyllabusAccordion courseId={1} />
-
+          <AboutCourse courseId="3" />
+          <SyllabusAccordion courseId={3} />
+<ToolsCovered courseId={2} />
           <Benefits />
 
         </div>
         <CertificateSection /></div>
       <div className='lg:w-3/4'>
-        <Faq courseId="1" />
+        <Faq courseId="3" />
 
       <div className="flex justify-center items-center py-4 lg:w-3/4 gap-2">
         <button

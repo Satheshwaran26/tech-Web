@@ -1,114 +1,127 @@
 "use client";
 
-import { motion, useAnimation } from "framer-motion";
-import { useEffect } from "react";
-import { useInView } from "react-intersection-observer";
+import React from "react";
+import { motion } from "framer-motion";
+import { Smartphone, Globe, Code, ArrowRight, Sparkles } from "lucide-react";
+import Image from "next/image";
 
-const TextFloat = () => {
-  const controls = useAnimation();
-  const { ref, inView } = useInView({
-    triggerOnce: false,
-    threshold: 0.2,
-  });
+const services = [
+  {
+    id: 1,
+    title: "App Development",
+    description: "We build stunning mobile applications for iOS and Android with cutting-edge technologies and seamless user experiences.",
+    icon: <Smartphone className="w-6 h-6" />,
+    color: "text-blue-500",
 
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    } else {
-      controls.start("hidden");
-    }
-  }, [inView, controls]);
+    borderColor: "border-gray-500/20",
+    features: ["Native & Cross-platform", "Intuitive UX/UI", "Scalable Architecture"]
+  },
+  {
+    id: 2,
+    title: "Web Development",
+    description: "Create powerful web applications and sites with modern frameworks, responsive designs, and optimized performance.",
+    icon: <Globe className="w-6 h-6" />,
+    color: "text-orange-500",
+ 
+    borderColor: "border-orange-500/20",
+    features: ["Responsive Design", "SEO Optimization", "Performance Focused"]
+  },
+  {
+    id: 3,
+    title: "Software Development",
+    description: "Custom software solutions tailored to your business needs with robust architecture and scalable infrastructure.",
+    icon: <Code className="w-6 h-6" />,
+    color: "text-purple-500",
+    borderColor: "border-gray-500/20",
 
-  const variants = {
-    hidden: {
-      x: "50%",
-      opacity: 0.5,
-    },
-    visible: {
-      x: "0%",
-      opacity: 1,
-      transition: {
-        duration: 1.5,
-        ease: "easeOut",
-      },
-    },
-  };
+    features: ["Enterprise Solutions", "Cloud Integration", "Secure Architecture"]
+  }
+];
 
+const ServiceSection: React.FC = () => {
   return (
-    <div className=" relative">
-      {/* Enhanced top gradient with multiple layers */}
-      <div className="absolute top-0 left-0 right-0 h-32">
-        <div className="absolute inset-0 " />
-        {/* <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-transparent to-pink-500/10" /> */}
-      </div>
-
-      <div className=" sm:min-h-[60vh] md:min-h-[70vh] lg:min-h-screen 
-                    flex items-center justify-center overflow-hidden 
-                    px-4 py-16 sm:py-24 relative">
-        {/* Decorative background elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          {/* <div className="absolute -top-24 -left-24 w-48 h-48 bg-purple-500/10 rounded-full blur-3xl animate-pulse" /> */}
-          {/* <div className="absolute -bottom-24 -right-24 w-48 h-48 bg-pink-500/10 rounded-full blur-3xl animate-pulse" /> */}
-        </div>
-
+    <section className="relative py-28 overflow-hidden">
+      {/* Background blur elements */}
+    
+      <div className="container mx-auto px-4 relative z-10">
+        {/* Section Header */}
         <motion.div
-          ref={ref}
-          variants={variants}
-          initial="hidden"
-          animate={controls}
-          className="text-center w-full px-4 sm:px-6 relative z-10"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-20 space-y-4"
         >
-          {/* Enhanced mobile text container */}
-          <div className="max-w-[90vw] sm:max-w-none mx-auto">
-            <motion.h2 
-              className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold transform-gpu"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              <span className="inline-block text-transparent bg-clip-text 
-                           bg-gradient-to-r from-white via-purple-200 to-pink-100
-                           px-2 py-1">
-                <span className="block sm:hidden">#Together</span>
-                <motion.span 
-                  className="block sm:hidden"
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.4 }}
-                >
-                  WeGrow
-                </motion.span>
-                <span className="hidden sm:block whitespace-nowrap">#TogetherWeGrow</span>
-              </span>
-            </motion.h2>
-          </div>
           
-          {/* Enhanced mobile description with animation */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.6 }}
-            className="mt-6 block sm:hidden"
-          >
-            <p className="text-base text-gray-300 font-medium mb-2">
-              Building the future together
-            </p>
-            <div className="flex items-center justify-center gap-2 mt-4">
-              <span className="w-2 h-2 bg-purple-500 rounded-full animate-pulse" />
-              <span className="w-2 h-2 bg-pink-500 rounded-full animate-pulse delay-75" />
-              <span className="w-2 h-2 bg-blue-500 rounded-full animate-pulse delay-150" />
-            </div>
-          </motion.div>
+          
+          <h2 className="text-5xl font-extralight text-white">Our
+           Services    
+                                   
+          </h2>
+          
+          <p className="text-[#909090] text-lg max-w-2xl mx-auto">
+            We deliver cutting-edge technology solutions tailored to your specific needs
+          </p>
         </motion.div>
-      </div>
 
-      {/* Enhanced bottom gradient with multiple layers */}
-      <div className="absolute bottom-0 left-0 right-0 h-32">
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0f] to-transparent" />
-        {/* <div className="absolute inset-0 bg-gradient-to-r from-pink-500/10 via-transparent to-purple-500/10" /> */}
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {services.map((service, index) => (
+            <motion.div
+              key={service.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              whileHover={{ y: -5, scale: 1.02 }}
+              className="group"
+            >
+              <div className={`h-full rounded-xl bg-gradient-to-br  backdrop-blur-sm border ${service.borderColor} overflow-hidden p-8 transition-all duration-300 hover:shadow-lg hover:shadow-${service.color.replace('text-', '')}/5 relative`}>
+                {/* Decorative elements */}
+                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-white/5 to-transparent rounded-bl-[100px] -z-0" />
+                
+                {/* Icon with background */}
+                <div className={`relative z-10 mb-6 inline-flex items-center justify-center w-12 h-12 rounded-lg bg-[#1A1A1A] border ${service.borderColor}`}>
+                  <div className={service.color}>
+                    {service.icon}
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="space-y-5 relative z-10">
+                  <h3 className="text-2xl font-extralight text-white">
+                    {service.title}
+                  </h3>
+                  
+                  <p className="text-[#909090] leading-relaxed font-light" >
+                    {service.description}
+                  </p>
+
+                  {/* Features */}
+                  <ul className="space-y-3 pt-2">
+                    {service.features.map((feature, i) => (
+                      <li key={i} className="flex items-center gap-3 text-[#A0A0A0]">
+                        <div className={`w-1.5 h-1.5 rounded-full ${service.color.replace('text-', 'bg-')}`} />
+                        <span className="font-light">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* CTA */}
+                  <motion.div
+                    whileHover={{ x: 5 }}
+                    className={`flex items-center gap-2 ${service.color} mt-6 group-hover:opacity-90 transition-opacity`}
+                  >
+                    <span className="font-medium">Learn more</span>
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </motion.div>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
-export default TextFloat;
+export default ServiceSection;

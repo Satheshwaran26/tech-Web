@@ -25,7 +25,7 @@ const Contact = () => {
         </p>
         <div className="flex items-center">
           <Image 
-            src="/images/tino.png" 
+            src="" 
             alt="Portrait of Aarav Dev" 
             className="w-12 h-12 rounded-full mr-4 border-2 border-[#9e9d9]"
           />

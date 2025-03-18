@@ -27,13 +27,13 @@ const Footer = () => {
         <div className="mb-6 pb-10 md:mb-0">
           <div className="flex items-center mb-4">
             <Image
-              src="/images/divineinfotech.png"
+              src="/images/Et.png"
               alt="Company logo"
               width={55}
               height={55}
               className="w-16 h-16 mr-2"
             />
-            <span className="text-xl font-normal text-[#d0d0d0]">Divine Infotech</span>
+            <span className="text-xl font-normal text-[#d0d0d0]">Error Tech </span>
           </div>
           <p className="text-[#9e9d9d]">
             Find a job you love and research the fastest-growing companies.
@@ -55,7 +55,7 @@ const Footer = () => {
       {/* Bottom Section */}
       <div className="border-t border-[#1c1c1c] mt-8 pt-4 text-[#9e9d9d]">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center">
-          <p className="text-[#9e9d9d] text-sm">© {new Date().getFullYear()} Divine Infotech, Inc.</p>
+          <p className="text-[#9e9d9d] text-sm">© {new Date().getFullYear()} Error Tech, Inc.</p>
 
           <div className="flex space-x-4 mt-4 md:mt-0">
             {["Terms", "Privacy", "Refund Policy"].map((text, index) => (

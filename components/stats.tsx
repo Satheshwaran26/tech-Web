@@ -2,12 +2,13 @@
 
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import { TrendingUp, Users, Building, Award } from 'lucide-react';
 
 const stats = [
-  { value: 290, label: 'Employees', suffix: '+' },
-  { value: 103, label: 'Users', suffix: 'k+' },
-  { value: 2500, label: 'Customers', suffix: '+' },
-  { value: 16, label: 'Trainers', suffix: '' },
+  { value: 290, label: 'Employees', suffix: '+', icon: <Users className="w-6 h-6" /> },
+  { value: 103, label: 'Users', suffix: 'k+', icon: <TrendingUp className="w-6 h-6" /> },
+  { value: 2500, label: 'Customers', suffix: '+', icon: <Building className="w-6 h-6" /> },
+  { value: 16, label: 'Trainers', suffix: '', icon: <Award className="w-6 h-6" /> },
 ];
 
 const Counter = ({ value, suffix }: { value: number; suffix: string }) => {
@@ -16,7 +17,7 @@ const Counter = ({ value, suffix }: { value: number; suffix: string }) => {
   useEffect(() => {
     const end = value;
     const duration = 2000;
-    const increment = end / (duration / 16); // 60 FPS
+    const increment = end / (duration / 16);
 
     const timer = setInterval(() => {
       setCount((prevCount) => {
@@ -42,43 +43,68 @@ const Counter = ({ value, suffix }: { value: number; suffix: string }) => {
 
 export default function StatsSection() {
   return (
-    <section className="relative bg-gradient-to-b from-[#0a0a0f] via-[#0d0c13] to-[#0a0a0f]">
-      <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[#0a0a0f] to-transparent" />
+    <section className="relative  py-24">
+      {/* Metallic Grid Background */}
+     
 
-      <div className="max-w-5xl mx-auto px-6 py-24 relative">
-        <motion.div 
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="rounded-3xl p-8 sm:p-16 text-white relative overflow-hidden"
+
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[#FF6B00]/10 rounded-full blur-[150px]" />
+
+      <div className="container mx-auto px-6 relative z-10">
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-20"
         >
-          <div className="absolute inset-0 bg-[#0d0c13]" />
-          <div className="absolute inset-0">
-            <div className="absolute inset-0 bg-gradient-to-br border border-gray-400 from-blue-900 via-purple-900 to-red-900 opacity-40" />
-          </div>
-          <div className="relative z-10">
-            <h2 className="text-4xl font-bold text-center mb-16">
-              Let&rsquo;s dive into our numbers
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-              {stats.map((stat, index) => (
-                <div 
-                  key={index} 
-                  className="text-center group hover:scale-105 transition-transform duration-300"
-                >
-                  <p className="text-5xl font-bold mb-2">
+          <h2 className="text-4xl sm:text-6xl font-extralight">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#FFFFFF] via-[#C0C0C0] to-[#FF6B00]">
+              Our Impact in Numbers
+            </span>
+          </h2>
+          <p className="text-[#C0C0C0] text-lg  font-extralight mt-4 max-w-2xl mx-auto">
+            Delivering excellence across industries with proven results
+          </p>
+        </motion.div>
+
+        {/* Stats Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {stats.map((stat, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              whileHover={{ y: -5, scale: 1.02 }}
+              className="group"
+            >
+              <div className="h-full p-[1px] rounded-2xl b overflow-hidden border border-[#3A3A3A]">
+                <div className="h-full rounded-2xl  p-8 flex flex-col items-center text-center relative overflow-hidden">
+                  {/* Icon */}
+                  <div className="mb-4 p-3 rounded-full bg-[#1A1A1A] border border-[#3A3A3A] group-hover:border-[#FF6B00]/50 transition-colors duration-300">
+                    <div className="text-[#D3D3D3] group-hover:text-[#FF6B00] transition-colors duration-300">
+                      {stat.icon}
+                    </div>
+                  </div>
+                  
+                  {/* Number */}
+                  <p className="text-5xl font-bold mb-2 bg-gradient-to-r from-[#FFFFFF] via-[#C0C0C0] to-[#FF6B00] bg-clip-text text-transparent">
                     <Counter value={stat.value} suffix={stat.suffix} />
                   </p>
-                  <p className="text-gray-300 text-xl">{stat.label}</p>
+                  
+                  {/* Label */}
+                  <p className="text-[#A9A9A9] text-lg font-medium">{stat.label}</p>
+                  
+                  {/* Hover Gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#FF6B00]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
-              ))}
-            </div>
-          </div>
-          <div className="absolute -top-24 -left-24 w-48 h-48 bg-purple-500/20 rounded-full blur-3xl" />
-          <div className="absolute -bottom-24 -right-24 w-48 h-48 bg-pink-500/20 rounded-full blur-3xl" />
-        </motion.div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0a0a0f] to-transparent" />
     </section>
   );
 }

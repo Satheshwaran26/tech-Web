@@ -2,8 +2,8 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Smartphone, Globe, Code, ArrowRight, Sparkles } from "lucide-react";
-import Image from "next/image";
+import { Smartphone, Globe, Code, ArrowRight } from "lucide-react";
+
 
 const services = [
   {

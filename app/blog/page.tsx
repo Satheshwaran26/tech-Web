@@ -1,14 +1,13 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Search, ArrowRight, Sparkles, BookOpen, Share2, MessageCircle, 
+import { Search, ArrowRight, Sparkles,  MessageCircle, 
          Heart, Bookmark, TrendingUp } from 'lucide-react';
 
 const BlogPage = () => {
-  const [selectedCategory, setSelectedCategory] = useState('All');
+
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
   return (
@@ -96,7 +95,7 @@ const BlogPage = () => {
               transition={{ delay: 0.5 }}
               className="flex flex-wrap justify-center gap-4 pt-8"
             >
-              {['All', 'Technology', 'Development', 'AI', 'Design'].map((topic, index) => (
+              {['All', 'Technology', 'Development', 'AI', 'Design'].map((topic) => (
                 <motion.button
                   key={topic}
                   whileHover={{ scale: 1.05, y: -2 }}
@@ -125,7 +124,7 @@ const BlogPage = () => {
               { label: 'Writers', value: '150+' },
               { label: 'Readers', value: '50K+' },
               { label: 'Categories', value: '25+' }
-            ].map((stat, index) => (
+            ].map((stat) => (
               <motion.div
                 key={stat.label}
                 whileHover={{ y: -5 }}

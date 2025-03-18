@@ -338,7 +338,7 @@ const ServicesPage = () => {
                   transition={{ delay: 0.2 }}
                   className="text-xl text-gray-300 mb-10"
                 >
-                  Let's create something extraordinary together
+                  Let&apos;s create something extraordinary together
                 </motion.p>
                 <motion.button
                   whileHover={{ scale: 1.05 }}

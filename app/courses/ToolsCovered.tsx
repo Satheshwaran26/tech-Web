@@ -9,10 +9,6 @@ interface Tool {
     logo: string;
 }
 
-interface Course {
-    id: number;
-    tools: Tool[];
-}
 
 interface ToolsCoveredProps {
     courseId: number;

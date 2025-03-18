@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+
 import { FaGlobe, FaMobile, FaLaptopCode, FaLinkedin, FaTwitter, FaGithub } from 'react-icons/fa';
 const AboutPage = () => {
     return (

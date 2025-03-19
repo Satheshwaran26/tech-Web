@@ -98,10 +98,26 @@ const Navbar: React.FC = () => {
           scrolled ? 'bg-black/90 backdrop-blur-md' : 'bg-black'
         }`}>
           <Link href="/" className="block hover:text-orange-400">Home</Link>
-          <Link href="/about" className="block hover:text-orange-400">About</Link>
-          <Link href="/contact" className="block hover:text-orange-400">Contact</Link>
-          <Link href="/features" className="block hover:text-orange-400">Feature</Link>
-          <Link href="/login" className="block hover:text-orange-400">Login</Link>
+          
+          <Link href="/about" className="block hover:text-orange-400 transition">About</Link>
+          <Link href="/serviceq" className= "block hover:text-orange-400 transition">Services</Link>
+          <Link href="/blog" className=" block hover:text-orange-400 transition">Blog</Link>
+          <div className="relative">
+            <button
+              onClick={() => setIsProductDropdownOpen(!isProductDropdownOpen)}
+              className="flex items-center hover:text-orange-400 transition"
+            >
+              Products <ChevronDown className="ml-1 w-5 h-5" />
+            </button>
+            {isProductDropdownOpen && (
+              <div className={`absolute left-0 mt-4 w-48 text-gray-300 border shadow-lg rounded-lg py-2 transition-all duration-300 ${
+                scrolled ? 'bg-[#0e0e0e]/90 backdrop-blur-md border-[#252525]/70' : 'bg-[#0e0e0e] border-[#252525]'
+              }`}>
+                <Link href="/products/billingpage" className="block px-4 py-2 hover:bg-[#1a1a1a]/70">Billing Software</Link>
+                <Link href="/products/ai-model" className="block px-4 py-2 hover:bg-[#1a1a1a]/70">AI Model</Link>
+              </div>
+            )}
+          </div>
           <Link href="/get-started" className="block hover:text-orange-400">Get Started</Link>
         </div>
       )}

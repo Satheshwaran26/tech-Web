@@ -69,8 +69,11 @@ export default function FAQ() {
   };
 
   return (
-    <div className="flex justify-center items-center pt-16 bg-[#080808] px-4">
-      <div className="max-w-3xl w-full text-center">
+    <div className="flex justify-center items-center pt-16 bg-[#080808] px-4 relative overflow-hidden">
+      {/* Orange gradient blur background */}
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[#FF6B00]/10 rounded-full blur-[150px]" />
+      
+      <div className="max-w-3xl w-full text-center relative z-10">
         <motion.h1 
           className="text-5xl font-extralight text-[#d0d0d0] mb-4"
           initial={{ opacity: 0, y: -20 }}
@@ -98,7 +101,7 @@ export default function FAQ() {
             <motion.div
               key={index}
               variants={itemVariants}
-              className={`border border-[#1c1c1c] rounded-lg cursor-pointer transition-all px-4 py-5
+              className={`border border-[#1c1c1c] bg-transparent rounded-lg cursor-pointer transition-all px-4 py-5
                 ${openIndex === index ? "bg-gradient-to-b from-[#101010] via-[#080808] to-[#080808]" : "bg-[#080808]"}`}
               onClick={() => toggleFAQ(index)}
               whileHover={{ 
@@ -144,7 +147,10 @@ export default function FAQ() {
             </motion.div>
           ))}
         </motion.div>
+        
       </div>
+      
     </div>
+    
   );
 }

@@ -33,27 +33,36 @@ const TrustedBrands: React.FC = () => {
   }, []);
 
   return (
-    <section className="bg-[#080808] pt-28  ">
-      
-      <div className="max-w-screen-full mx-auto text-center">
-        <h2 className="text-3xl font-extralight mb-6 text-[#676767]">Brands That Trust Us</h2>
-        <div className="flex justify-center items-center gap-10">
-          {isLoading ? (
-            <p className="text-silver">Loading logos...</p>
-          ) : (
-            logos.map((logo, index) => (
-              <div key={index} className="flex items-center justify-center">
+    <section className="bg-[#080808] py-12 sm:py-16 md:py-20 lg:py-28">
+      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-2xl sm:text-3xl font-extralight mb-8 sm:mb-12 text-[#676767] text-center">
+          Brands That Trust Us
+        </h2>
+        
+        {isLoading ? (
+          <p className="text-silver text-center">Loading logos...</p>
+        ) : (
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 sm:gap-8 md:gap-10">
+            {logos.map((logo, index) => (
+              <div 
+                key={index} 
+                className="flex items-center justify-center p-4 hover:scale-105 transition-transform duration-300"
+              >
                 <Image
                   src={logo.src}
                   alt={logo.alt}
-                  width={115}
-                  height={115}
-                  className="object-contain grayscale"
+                  width={90}
+                  height={90}
+                  className="object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                  sizes="(max-width: 640px) 45vw, 
+                         (max-width: 768px) 30vw,
+                         (max-width: 1024px) 20vw,
+                         15vw"
                 />
               </div>
-            ))
-          )}
-        </div>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );

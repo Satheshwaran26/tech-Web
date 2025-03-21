@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { FaGlobe, FaMobile, FaLaptopCode, FaLinkedin, FaTwitter, FaGithub } from 'react-icons/fa';
+import { FaGlobe, FaMobile, FaLaptopCode, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
 const AboutPage = () => {
   return (
@@ -177,7 +177,7 @@ const AboutPage = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   className="relative"
                 >
-                  <div className="absolute -left-8 -top-6 text-6xl text-orange-500/20 font-serif">"</div>
+                  <div className="absolute -left-8 -top-6 text-6xl text-orange-500/20 font-serif">&ldquo;</div>
                   <h2 className="text-3xl md:text-4xl font-light leading-relaxed text-gray-200/90">
                     We at Divine Infotech are committed to helping you
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">

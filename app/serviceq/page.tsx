@@ -5,9 +5,9 @@ import { FaCode, FaMobile, FaDesktop, FaRocket, FaDatabase, FaCloud, FaShieldAlt
 
 const ServicesPage = () => {
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-[#080808]">
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           {/* Animated Grid Background */}
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]" />
@@ -23,7 +23,7 @@ const ServicesPage = () => {
               repeat: Infinity,
               ease: "easeInOut",
             }}
-            className="absolute top-1/4 left-1/4 w-32 h-32 bg-purple-500/10 rounded-full blur-xl"
+            className="absolute top-1/4 left-1/4 w-32 h-32 bg-orange-500/10 rounded-full blur-xl"
           />
           <motion.div
             animate={{
@@ -35,7 +35,7 @@ const ServicesPage = () => {
               repeat: Infinity,
               ease: "easeInOut",
             }}
-            className="absolute bottom-1/4 right-1/4 w-40 h-40 bg-pink-500/10 rounded-full blur-xl"
+            className="absolute bottom-1/4 right-1/4 w-40 h-40 bg-orange-500/10 rounded-full blur-xl"
           />
         </div>
 
@@ -49,8 +49,8 @@ const ServicesPage = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
-              className="inline-block px-4 py-2 rounded-full text-sm bg-purple-500/10 text-purple-400 
-                        border border-purple-500/20 mb-6"
+              className="inline-block px-4 py-2 rounded-full text-sm bg-orange-500/10 text-orange-400 
+                        border border-orange-500/20 mb-6 font-extralight"
             >
               Our Services
             </motion.span>
@@ -59,10 +59,10 @@ const ServicesPage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-5xl md:text-7xl font-bold mb-8"
+              className="text-5xl md:text-7xl font-extralight mb-8"
             >
               Transform Your Business With
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-400">
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500 pb-2">
                 Digital Excellence
               </span>
             </motion.h1>
@@ -71,7 +71,7 @@ const ServicesPage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="text-xl text-gray-400 mb-12 max-w-3xl mx-auto"
+              className="text-xl text-gray-400 mb-12 max-w-3xl mx-auto font-extralight "
             >
               We deliver cutting-edge solutions that drive innovation and growth
             </motion.p>
@@ -85,69 +85,175 @@ const ServicesPage = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full text-white font-medium"
+                className="px-8 py-4 bg-white text-transparent bg-clip-text  bg-gradient-to-r from-orange-400 to-red-500 rounded-full font-medium border hover:scale-105 hover:shadow-2xl  border-[#1c1c1c]"
               >
                 Get Started
               </motion.button>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-white/10 rounded-full text-white font-medium backdrop-blur-sm 
-                         border border-white/20"
+                className="px-8 py-4  rounded-full text-gray-400 font-extralight backdrop-blur-sm 
+                         border border-white/10"
               >
                 Learn More
               </motion.button>
             </motion.div>
           </motion.div>
+          {/* Mouse Scroll Indicator */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8 }}
+            className="absolute bottom-22 pt-16 -ml-7 left-1/2 transform -translate-x-1/2 z-50"
+          >
+            <motion.button
+              onClick={() => {
+                window.scrollTo({
+                  top: window.innerHeight,
+                  behavior: 'smooth'
+                });
+              }}
+              className="relative p-3 rounded-full border border-orange-500/20 bg-orange-500/5 
+                   hover:border-orange-500/40 hover:bg-orange-500/10 
+                   transition-all duration-300 group backdrop-blur-sm"
+            >
+              {/* Mouse outline */}
+              <svg
+                width="24"
+                height="34"
+                viewBox="0 0 24 34"
+                className="text-orange-500"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                {/* Mouse body */}
+                <rect x="1" y="1" width="22" height="32" rx="11" />
+                {/* Scroll wheel/dot */}
+                <motion.circle
+                  cx="12"
+                  cy="10"
+                  r="2"
+                  fill="currentColor"
+                  animate={{
+                    y: [0, 12, 0]
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                />
+              </svg>
+            </motion.button>
+          </motion.div>
         </div>
+        
       </section>
 
       {/* Services Section */}
       <section className="py-32 relative">
-        <div className="container mx-auto px-6">
+        {/* Background Effects */}
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]" />
+          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-orange-500/10 rounded-full blur-[120px]" />
+          <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-purple-500/10 rounded-full blur-[120px]" />
+        </div>
+
+        <div className="container mx-auto px-6 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             className="text-center mb-20"
           >
-            <h2 className="text-4xl font-bold mb-6">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">
-                Our Services
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 0.2 }}
+              className="flex items-center justify-center gap-2 mb-6"
+            >
+              <span className="h-[1px] w-10 bg-gradient-to-r from-transparent to-orange-500"></span>
+              <span className="text-orange-400 tracking-wider text-sm font-light">OUR SERVICES</span>
+              <span className="h-[1px] w-10 bg-gradient-to-l from-transparent to-orange-500"></span>
+            </motion.div>
+
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              className="text-4xl md:text-6xl font-extralight mb-6"
+            >
+              Elevate Your Business with
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-red-400 to-purple-400">
+                Innovative Solutions
               </span>
-            </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
-              Comprehensive solutions tailored to your needs
-            </p>
+            </motion.h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 relative">
             {services.map((service, index) => (
               <motion.div
                 key={service.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ y: -10 }}
+                transition={{ delay: index * 0.2 }}
                 className="group relative"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl opacity-0 
-                               group-hover:opacity-10 transition-opacity duration-500 blur-xl" />
-                <div className="relative p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm 
-                               group-hover:border-purple-500/20 transition-all duration-500">
-                  <div className="w-14 h-14 rounded-xl bg-purple-500/10 flex items-center justify-center mb-6 
-                                group-hover:bg-purple-500/20 transition-all duration-300">
-                    {service.icon}
+                {/* Hover Background Effect */}
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 via-red-500/10 to-purple-500/10 rounded-3xl 
+                              opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl" />
+                
+                {/* Card Content */}
+                <div className="relative p-1 rounded-3xl bg-gradient-to-br from-white/[0.05] to-transparent">
+                  <div className="bg-[#0c0c0c] p-8 rounded-3xl border border-white/[0.05] h-full
+                                backdrop-blur-3xl group-hover:border-orange-500/10 transition-all duration-500
+                                shadow-[0_0_50px_-12px_rgba(0,0,0,0.25)] group-hover:shadow-[0_0_50px_-12px_rgba(236,72,153,0.3)]">
+                    
+                    {/* Icon */}
+                    <div className="mb-8 relative">
+                      <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-orange-500/10 to-purple-500/10
+                                    flex items-center justify-center relative z-10
+                                    group-hover:from-orange-500/20 group-hover:to-purple-500/20 transition-all duration-500">
+                        {service.icon}
+                      </div>
+                      <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-purple-500/20 rounded-2xl blur-xl opacity-0 
+                                    group-hover:opacity-50 transition-all duration-500" />
+                    </div>
+
+                    {/* Content */}
+                    <h3 className="text-2xl font-light text-white mb-4 group-hover:text-transparent group-hover:bg-clip-text 
+                                 group-hover:bg-gradient-to-r group-hover:from-orange-400 group-hover:to-purple-400 transition-all duration-300">
+                      {service.title}
+                    </h3>
+                    <p className="text-gray-400 font-extralight mb-8 text-sm leading-relaxed">
+                      {service.description}
+                    </p>
+
+                    {/* Features */}
+                    <ul className="space-y-4">
+                      {service.features.map((feature, idx) => (
+                        <motion.li
+                          key={idx}
+                          initial={{ opacity: 0, x: -10 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          transition={{ delay: 0.5 + idx * 0.1 }}
+                          className="flex items-center gap-3 text-gray-400 group/feature"
+                        >
+                          <span className="w-8 h-8 rounded-lg bg-gradient-to-br from-orange-500/5 to-purple-500/5 flex items-center justify-center
+                                       group-hover/feature:from-orange-500/10 group-hover/feature:to-purple-500/10 transition-all duration-300">
+                            <FaRocket className="text-orange-400 text-xs group-hover/feature:scale-110 transition-transform duration-300" />
+                          </span>
+                          <span className="font-extralight text-sm group-hover/feature:text-gray-300 transition-colors duration-300">
+                            {feature}
+                          </span>
+                        </motion.li>
+                      ))}
+                    </ul>
+
+                    {/* Hover Border Effect */}
+                    <div className="absolute inset-0 rounded-3xl border border-orange-500/0 group-hover:border-orange-500/20 transition-all duration-500" />
                   </div>
-                  <h3 className="text-2xl font-semibold text-white mb-4">{service.title}</h3>
-                  <p className="text-gray-400 mb-6">{service.description}</p>
-                  <ul className="space-y-3">
-                    {service.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center gap-3 text-gray-400">
-                        <FaRocket className="text-purple-400 flex-shrink-0" />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
                 </div>
               </motion.div>
             ))}

@@ -26,9 +26,11 @@ const Navbar: React.FC = () => {
   }, []);
 
   return (
+    
     <nav className={`sticky top-0 z-50 py-4 transition-all duration-300 bg-black ${
       scrolled ? 'bg-black/10 backdrop-blur-sm   shadow-lg' : 'bg-transparent'
     }`}>
+  
       
       <div className="max-w-[1800px] mx-auto px-6 flex justify-between items-center ">
         {/* Logo */}

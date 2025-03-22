@@ -1,4 +1,6 @@
+/// <reference types="react" />
 "use client";
+import React from 'react';
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { FaCode, FaMobile, FaDesktop, FaRocket, FaDatabase, FaCloud, FaShieldAlt, FaUsers, FaChartBar } from 'react-icons/fa';
@@ -153,14 +155,9 @@ const ServicesPage = () => {
         
       </section>
 
-      {/* Services Section */}
+      
       <section className="py-32 relative">
-        {/* Background Effects */}
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]" />
-          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-orange-500/10 rounded-full blur-[120px]" />
-          <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-purple-500/10 rounded-full blur-[120px]" />
-        </div>
+
 
         <div className="container mx-auto px-6 relative z-10">
           <motion.div
@@ -185,7 +182,7 @@ const ServicesPage = () => {
               className="text-4xl md:text-6xl font-extralight mb-6"
             >
               Elevate Your Business with
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-red-400 to-purple-400">
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-400  to-red-600">
                 Innovative Solutions
               </span>
             </motion.h2>
@@ -201,29 +198,29 @@ const ServicesPage = () => {
                 className="group relative"
               >
                 {/* Hover Background Effect */}
-                <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 via-red-500/10 to-purple-500/10 rounded-3xl 
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 via-red-500/10 to-red-600/10 rounded-3xl 
                               opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl" />
                 
                 {/* Card Content */}
                 <div className="relative p-1 rounded-3xl bg-gradient-to-br from-white/[0.05] to-transparent">
                   <div className="bg-[#0c0c0c] p-8 rounded-3xl border border-white/[0.05] h-full
                                 backdrop-blur-3xl group-hover:border-orange-500/10 transition-all duration-500
-                                shadow-[0_0_50px_-12px_rgba(0,0,0,0.25)] group-hover:shadow-[0_0_50px_-12px_rgba(236,72,153,0.3)]">
+                                shadow-[0_0_50px_-12px_rgba(0,0,0,0.25)] group-hover:shadow-[0_0_50px_-12px_rgba(251,146,60,0.3)]">
                     
                     {/* Icon */}
                     <div className="mb-8 relative">
-                      <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-orange-500/10 to-purple-500/10
+                      <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-orange-500/10 to-red-500/10
                                     flex items-center justify-center relative z-10
-                                    group-hover:from-orange-500/20 group-hover:to-purple-500/20 transition-all duration-500">
+                                    group-hover:from-orange-500/20 group-hover:to-red-500/20 transition-all duration-500">
                         {service.icon}
                       </div>
-                      <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-purple-500/20 rounded-2xl blur-xl opacity-0 
+                      <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-red-500/20 rounded-2xl blur-xl opacity-0 
                                     group-hover:opacity-50 transition-all duration-500" />
                     </div>
 
                     {/* Content */}
                     <h3 className="text-2xl font-light text-white mb-4 group-hover:text-transparent group-hover:bg-clip-text 
-                                 group-hover:bg-gradient-to-r group-hover:from-orange-400 group-hover:to-purple-400 transition-all duration-300">
+                                 group-hover:bg-gradient-to-r group-hover:from-orange-400 group-hover:to-red-500 transition-all duration-300">
                       {service.title}
                     </h3>
                     <p className="text-gray-400 font-extralight mb-8 text-sm leading-relaxed">
@@ -240,8 +237,8 @@ const ServicesPage = () => {
                           transition={{ delay: 0.5 + idx * 0.1 }}
                           className="flex items-center gap-3 text-gray-400 group/feature"
                         >
-                          <span className="w-8 h-8 rounded-lg bg-gradient-to-br from-orange-500/5 to-purple-500/5 flex items-center justify-center
-                                       group-hover/feature:from-orange-500/10 group-hover/feature:to-purple-500/10 transition-all duration-300">
+                          <span className="w-8 h-8 rounded-lg bg-gradient-to-br from-orange-500/5 to-red-500/5 flex items-center justify-center
+                                       group-hover/feature:from-orange-500/10 group-hover/feature:to-red-500/10 transition-all duration-300">
                             <FaRocket className="text-orange-400 text-xs group-hover/feature:scale-110 transition-transform duration-300" />
                           </span>
                           <span className="font-extralight text-sm group-hover/feature:text-gray-300 transition-colors duration-300">
@@ -263,117 +260,106 @@ const ServicesPage = () => {
 
       {/* Tech Stack Section */}
       <section className="py-32 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-purple-900/10 to-black" />
+        <div className="absolute inset-0">
+          {/* Grid Background */}
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]" />
+        </div>
         
         <div className="container mx-auto px-6 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-center mb-20"
+            className="text-center max-w-4xl mx-auto mb-20"
           >
-            <h2 className="text-4xl font-bold mb-6">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">
-                Our Tech Stack
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              className="text-4xl md:text-6xl font-extralight mb-6"
+            >
+              Experience the Power and Versatility of the
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-400  to-red-600 font-extralight my-4">
+                Most Advanced
               </span>
-            </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
-              We use cutting-edge technologies to build powerful and scalable solutions
-            </p>
+              Technology Available.
+            </motion.h2>
           </motion.div>
 
-          {/* Tech Categories */}
-          <div className="grid md:grid-cols-3 gap-8 mb-20">
-            {techCategories.map((category, index) => (
+          {/* Tech Icons Grid */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-9 gap-12 md:gap-16 lg:gap-20 items-center justify-center max-w-7xl mx-auto px-8"
+          >
+            {[
+              { name: "React", icon: "/images/react.png" },
+              { name: "Figma", icon: "/images/flutter.png" },
+              { name: "Swift", icon: "/images/java.png" },
+              { name: "Flutter", icon:"/images/html.png" },
+              { name: "Apple", icon: "/images/javascript.png" },
+              { name: "Kotlin", icon: "/images/nodejs.png" },
+              { name: "HTML5", icon: "/images/python.png" },
+              { name: "Unity", icon: "/images/react.png" },
+              { name: "AWS", icon: "/images/java.png" }
+            ].map((tech, index) => (
               <motion.div
-                key={category.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                key={tech.name}
+                initial={{ opacity: 0, scale: 0.5 }}
+                whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ delay: index * 0.1 }}
-                className="relative group"
+                whileHover={{ scale: 1.1 }}
+                className="group relative"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl opacity-0 
-                               group-hover:opacity-10 transition-opacity duration-500 blur-xl" />
-                <div className="relative p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm 
-                               hover:border-purple-500/20 transition-all duration-500 h-full">
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center">
-                      {category.icon}
-                    </div>
-                    <h3 className="text-2xl font-semibold text-white">{category.title}</h3>
-                  </div>
-                  
-                  <div className="grid grid-cols-2 gap-4">
-                    {category.technologies.map((tech, idx) => (
-                      <motion.div
-                        key={tech.name}
-                        initial={{ opacity: 0, x: -10 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.2 + idx * 0.1 }}
-                        className="flex items-center gap-3 group/tech"
-                      >
-                        <div className="relative w-8 h-8 rounded-lg bg-white/5 p-1.5
-                                      group-hover/tech:bg-white/10 transition-all duration-300">
-                          <Image
-                            src={tech.icon}
-                            alt={tech.name}
-                            fill
-                            className="object-contain p-1"
-                          />
-                        </div>
-                        <span className="text-gray-400 group-hover/tech:text-white transition-colors duration-300">
-                          {tech.name}
-                        </span>
-                      </motion.div>
-                    ))}
+                <div className="relative w-full aspect-square flex items-center justify-center">
+                  <div className="absolute inset-0 bg-white/[0.05] rounded-2xl group-hover:bg-white/[0.1] 
+                                transition-all duration-300 border border-white/[0.05]" />
+                  <div className="relative w-20  h-16 flex items-center justify-center ">
+                    <Image
+                      src={tech.icon}
+                      alt={tech.name}
+                      fill
+                      className="object-contain p-3"
+                    />
                   </div>
                 </div>
               </motion.div>
             ))}
-          </div>
-
-          {/* Tech Stats */}
-          <div className="grid md:grid-cols-4 gap-8">
-            {techStats.map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                className="text-center"
-              >
-                <motion.div
-                  initial={{ scale: 0 }}
-                  whileInView={{ scale: 1 }}
-                  transition={{ delay: 0.2 }}
-                  className="w-16 h-16 mx-auto mb-4 rounded-xl bg-purple-500/10 flex items-center justify-center"
-                >
-                  {stat.icon}
-                </motion.div>
-                <h4 className="text-3xl font-bold text-white mb-2">{stat.value}</h4>
-                <p className="text-gray-400">{stat.label}</p>
-              </motion.div>
-            ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Our Work Section */}
       <section className="py-32 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-purple-900/10 to-black" />
+        {/* Simple Background */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#080808] via-[#0A0A0A] to-[#080808]" />
+        
         <div className="container mx-auto px-6 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-center mb-20"
+            className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold mb-6">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">
-                Our Work
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 0.2 }}
+              className="flex items-center justify-center gap-2 mb-6"
+            >
+              <span className="h-[1px] w-10 bg-gradient-to-r from-transparent to-orange-500"></span>
+              <span className="text-orange-400 tracking-wider text-sm font-light">Our Works</span>
+              <span className="h-[1px] w-10 bg-gradient-to-l from-transparent to-orange-500"></span>
+            </motion.div>
+
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              className="text-4xl md:text-6xl font-extralight mb-6"
+            >
+              Our Latest
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500 font-light mt-2">
+                Creative Works
               </span>
-            </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
-              Explore our latest projects and success stories
-            </p>
+            </motion.h2>
+           
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -383,32 +369,34 @@ const ServicesPage = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
-                whileHover={{ y: -10 }}
-                className="group relative"
+                whileHover={{ y: -8 }}
+                className="group bg-[#0c0c0c] rounded-2xl overflow-hidden border border-white/5"
               >
-                <div className="relative rounded-2xl overflow-hidden">
+                <div className="relative h-64 overflow-hidden">
                   <Image
                     src={project.image}
                     alt={project.title}
-                    width={400}
-                    height={300}
-                    className="object-cover aspect-[4/3] transform group-hover:scale-110 transition-transform duration-700"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-90" />
-                  
-                  <div className="absolute inset-0 p-8 flex flex-col justify-end">
-                    <h3 className="text-2xl font-bold text-white mb-3">{project.title}</h3>
-                    <p className="text-gray-300 mb-6">{project.description}</p>
-                    <div className="flex flex-wrap gap-2">
-                      {project.technologies.map((tech, idx) => (
-                        <span
-                          key={idx}
-                          className="px-3 py-1 rounded-full text-sm bg-white/10 text-white border border-white/20"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
+                </div>
+                
+                <div className="p-6">
+                  <h3 className="text-xl font-light text-transparent bg-clip-text bg-gradient-to-r from-orange-400  to-red-600 mb-2 ">
+                    {project.title}
+                  </h3>
+                  <p className="text-gray-400 text-sm mb-4 font-light">
+                    {project.description}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {project.technologies.map((tech, idx) => (
+                      <span
+                        key={idx}
+                        className="text-xs px-2 py-1 rounded-full bg-white/5 text-gray-300 border border-white/10"
+                      >
+                        {tech}
+                      </span>
+                    ))}
                   </div>
                 </div>
               </motion.div>
@@ -418,41 +406,68 @@ const ServicesPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 relative overflow-hidden">
+      <section className="py-32 relative overflow-hidden">
+        
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          className="container mx-auto px-6"
+          className="container mx-auto px-6 relative z-10"
         >
-          <div className="relative rounded-3xl overflow-hidden">
-            <div className="absolute inset-0">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-900/90 to-black/90" />
-            </div>
+          <div className="relative p-8 md:p-12 rounded-3xl overflow-hidden bg-[#0c0c0c] border border-white/5">
+            {/* Glow Effects */}
+            <div className="absolute top-0 left-1/4 w-1/2 h-1/2 bg-orange-500/20 rounded-full blur-[120px]" />
             
-            <div className="relative p-12 md:p-20">
-              <div className="max-w-3xl">
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]" />
+            <div className="relative flex flex-col lg:flex-row items-center justify-between gap-12">
+              
+              <div className="flex-1 text-center lg:text-left">
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ delay: 0.2 }}
+                  className="flex items-center justify-center lg:justify-start gap-2 mb-6"
+                >
+                  <span className="h-[1px] w-10 bg-gradient-to-r from-transparent to-orange-500"></span>
+                  <span className="text-orange-400 tracking-wider text-sm font-light">GET STARTED</span>
+                  <span className="h-[1px] w-10 bg-gradient-to-l from-transparent to-orange-500"></span>
+                </motion.div>
+
                 <motion.h2
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  className="text-4xl md:text-5xl font-bold text-white mb-6"
+                  className="text-4xl md:text-5xl font-extralight mb-6"
                 >
-                  Ready to Transform Your Business?
+                  Ready to Transform
+                  <span className="block text-transparent pb-1 bg-clip-text bg-gradient-to-r from-orange-400 to-red-500 font-light mt-2">
+                    Your Digital Presence?
+                  </span>
                 </motion.h2>
                 <motion.p
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2 }}
-                  className="text-xl text-gray-300 mb-10"
+                  className="text-gray-400 text-lg mb-8 font-extralight max-w-2xl mx-auto lg:mx-0"
                 >
-                  Let&apos;s create something extraordinary together
+                  Let's collaborate to create something extraordinary that sets your business apart
                 </motion.p>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
                 <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full text-white font-medium 
-                           hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="px-8 py-4 text-transparent bg-clip-text bg-gradient-to-r from-orange-400  to-red-600 border-2 border-white/10 font-medium  rounded-xl
+                           hover:shadow-lg hover:shadow-orange-500/25 transition-all duration-300"
                 >
-                  Start Your Project
+                  Start Your Project 
+                </motion.button>
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="px-8 py-4 rounded-xl text-gray-300 font-light border border-white/10 
+                           hover:bg-white/5 hover:border-orange-500/20 transition-all duration-300"
+                >
+                  Schedule a Call
                 </motion.button>
               </div>
             </div>
@@ -467,7 +482,7 @@ const services = [
   {
     title: "Web Development",
     description: "Custom websites and web applications built with modern technologies",
-    icon: <FaCode className="w-6 h-6 text-purple-400" />,
+    icon: <FaCode className="w-6 h-6 text-orange-400" />,
     features: [
       "Custom Website Development",
       "E-commerce Solutions",
@@ -478,7 +493,7 @@ const services = [
   {
     title: "Mobile Development",
     description: "Native and cross-platform mobile applications",
-    icon: <FaMobile className="w-6 h-6 text-purple-400" />,
+    icon: <FaMobile className="w-6 h-6 text-orange-400" />,
     features: [
       "iOS Development",
       "Android Development",
@@ -489,7 +504,7 @@ const services = [
   {
     title: "Software Solutions",
     description: "Enterprise-grade software solutions",
-    icon: <FaDesktop className="w-6 h-6 text-purple-400" />,
+    icon: <FaDesktop className="w-6 h-6 text-orange-400" />,
     features: [
       "Custom Software Development",
       "Enterprise Solutions",
@@ -503,19 +518,19 @@ const projects = [
   {
     title: "E-commerce Platform",
     description: "Modern shopping experience with advanced features",
-    image: "/images/projects/ecommerce.jpg",
+    image: "/images/website.jpg",
     technologies: ["React", "Node.js", "MongoDB"]
   },
   {
     title: "Mobile Banking App",
     description: "Secure and intuitive mobile banking solution",
-    image: "/images/projects/banking.jpg",
+    image: "/images/website.jpg",
     technologies: ["React Native", "Firebase", "Redux"]
   },
   {
     title: "Enterprise Dashboard",
     description: "Comprehensive analytics and management platform",
-    image: "/images/projects/dashboard.jpg",
+    image: "/images/website.jpg",
     technologies: ["Next.js", "TypeScript", "GraphQL"]
   }
 ];
@@ -523,7 +538,7 @@ const projects = [
 const techCategories = [
   {
     title: "Frontend",
-    icon: <FaCode className="w-6 h-6 text-purple-400" />,
+    icon: <FaCode className="w-6 h-6 text-orange-400" />,
     technologies: [
       { name: "React", icon: "/icons/react.svg" },
       { name: "Next.js", icon: "/icons/nextjs.svg" },
@@ -535,7 +550,7 @@ const techCategories = [
   },
   {
     title: "Backend",
-    icon: <FaDatabase className="w-6 h-6 text-purple-400" />,
+    icon: <FaDatabase className="w-6 h-6 text-orange-400" />,
     technologies: [
       { name: "Node.js", icon: "/icons/nodejs.svg" },
       { name: "Python", icon: "/icons/python.svg" },
@@ -547,7 +562,7 @@ const techCategories = [
   },
   {
     title: "DevOps & Cloud",
-    icon: <FaCloud className="w-6 h-6 text-purple-400" />,
+    icon: <FaCloud className="w-6 h-6 text-orange-400" />,
     technologies: [
       { name: "AWS", icon: "/icons/aws.svg" },
       { name: "Docker", icon: "/icons/docker.svg" },
@@ -563,22 +578,22 @@ const techStats = [
   {
     value: "50+",
     label: "Technologies",
-    icon: <FaCode className="w-6 h-6 text-purple-400" />
+    icon: <FaCode className="w-6 h-6 text-orange-400" />
   },
   {
     value: "100%",
     label: "Code Coverage",
-    icon: <FaShieldAlt className="w-6 h-6 text-purple-400" />
+    icon: <FaShieldAlt className="w-6 h-6 text-orange-400" />
   },
   {
     value: "24/7",
     label: "Support",
-    icon: <FaUsers className="w-6 h-6 text-purple-400" />
+    icon: <FaUsers className="w-6 h-6 text-orange-400" />
   },
   {
     value: "99.9%",
     label: "Uptime",
-    icon: <FaChartBar className="w-6 h-6 text-purple-400" />
+    icon: <FaChartBar className="w-6 h-6 text-orange-400" />
   }
 ];
 

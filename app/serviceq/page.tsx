@@ -456,7 +456,7 @@ const ServicesPage = () => {
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="px-8 py-4 text-transparent bg-clip-text bg-gradient-to-r from-orange-400  to-red-600 border-2 border-white/10 font-medium  rounded-xl
+                  className="px-8 py-4 text-transparent bg-clip-text bg-gradient-to-r from-orange-400  to-red-600 border border-white/10 font-medium  rounded-xl
                            hover:shadow-lg hover:shadow-orange-500/25 transition-all duration-300"
                 >
                   Start Your Project 

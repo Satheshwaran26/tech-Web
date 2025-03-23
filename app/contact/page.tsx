@@ -94,7 +94,7 @@ const Contact = () => {
             </span>
           </motion.div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-light mb-6 text-white">
-            Let's <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent animate-gradient">Connect</span>
+            Let&apos;s <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent animate-gradient">Connect</span>
           </h1>
           <p className="text-gray-400 max-w-2xl mx-auto text-sm sm:text-base">
             Reach out to us with your questions, ideas, or needs. Our team is ready to provide the solutions and support your business deserves.
@@ -188,7 +188,7 @@ const Contact = () => {
                   </div>
                 </div>
                 <p className="text-gray-300 italic text-sm sm:text-base">
-                  "We're dedicated to transforming businesses through innovative digital solutions. Let's create something amazing together."
+                  &quot;We&apos;re dedicated to transforming businesses through innovative digital solutions. Let&apos;s create something amazing together.&quot;
                 </p>
               </div>
               

@@ -1,4 +1,3 @@
-/// <reference types="react" />
 "use client";
 import React from 'react';
 import { motion } from "framer-motion";
@@ -453,7 +452,7 @@ const ServicesPage = () => {
                   transition={{ delay: 0.2 }}
                   className="text-gray-400 text-lg mb-8 font-extralight max-w-2xl mx-auto lg:mx-0"
                 >
-                  Let's collaborate to create something extraordinary that sets your business apart
+                  Let&apos;s collaborate to create something extraordinary that sets your business apart
                 </motion.p>
               </div>
 
@@ -540,7 +539,7 @@ const projects = [
   }
 ];
 
-const techCategories = [
+const _techCategories = [
   {
     title: "Frontend",
     icon: <FaCode className="w-6 h-6 text-orange-400" />,
@@ -579,7 +578,7 @@ const techCategories = [
   }
 ];
 
-const techStats = [
+const _techStats = [
   {
     value: "50+",
     label: "Technologies",

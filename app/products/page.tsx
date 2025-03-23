@@ -55,19 +55,19 @@ export default function ProductPage() {
     {
       name: "Sarah Johnson",
       position: "CTO, InnovateTech",
-      content: "Error Tech's AI Model has completely transformed our decision-making process. The predictive analytics capabilities are unmatched.",
+      content: "Error Tech&apos;s AI Model has completely transformed our decision-making process. The predictive analytics capabilities are unmatched.",
       rating: 5
     },
     {
       name: "Michael Chen",
       position: "Product Manager, DataFlow",
-      content: "The billing software has streamlined our entire financial operation. We've reduced processing time by 65%.",
+      content: "The billing software has streamlined our entire financial operation. We&apos;ve reduced processing time by 65%.",
       rating: 5
     },
     {
       name: "Priya Patel",
       position: "CEO, NextGen Solutions",
-      content: "The analytics dashboard gives us insights we never had before. It's intuitive and powerful at the same time.",
+      content: "The analytics dashboard gives us insights we never had before. It&apos;s intuitive and powerful at the same time.",
       rating: 4
     }
   ];
@@ -134,7 +134,7 @@ export default function ProductPage() {
             >
             Innovative Solutions
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500 pb-2">
-              for Tomorrow's Challenges
+              for Tomorrow&apos;s Challenges
               </span>
             </motion.h1>
 
@@ -531,7 +531,7 @@ export default function ProductPage() {
                     />
                   ))}
                 </div>
-                <p className="text-gray-300 mb-8 italic">"{testimonial.content}"</p>
+                <p className="text-gray-300 mb-8 italic">&quot;{testimonial.content}&quot;</p>
                 <div className="flex items-center">
                   <div className="w-10 h-10 rounded-full bg-gradient-to-r from-orange-500 to-red-500 flex items-center justify-center text-white font-medium">
                     {testimonial.name.charAt(0)}

@@ -31,7 +31,7 @@ const Footer = () => {
               </h2>
             </div>
             <p className="text-[#9e9d9d] leading-relaxed mb-8 max-w-md font-light">
-              Discover innovative opportunities and connect with forward-thinking companies that shape tomorrow's technology landscape.
+              Discover innovative opportunities and connect with forward-thinking companies that shape tomorrow&apos;s technology landscape.
             </p>
             <div className="flex gap-4">
               {[

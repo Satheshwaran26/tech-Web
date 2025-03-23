@@ -13,10 +13,7 @@ const HeroSection: React.FC = () => {
     "Tech Solutions",
     "Web Services",
     "Mobile Apps",
-    "Cloud Computing",
-    "IT Consulting",
-    "Digital Marketing",
-    "Cyber Security"
+    "IT Service"
   ];
 
   useEffect(() => {

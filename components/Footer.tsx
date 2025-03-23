@@ -11,10 +11,10 @@ const Footer = () => {
         <div className="absolute bottom-0 right-1/3 w-[500px] h-[500px] bg-gradient-to-br from-red-500/20 to-transparent rounded-full blur-3xl"></div>
       </div>
 
-      <div className="relative max-w-[1800px] mx-auto px-4  pt-6">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
+      <div className="relative max-w-[1800px] mx-auto px-4 pt-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 md:gap-12 mb-10 md:mb-16">
           {/* Brand Section */}
-          <div className="col-span-1 md:col-span-4">
+          <div className="col-span-1 lg:col-span-4">
             <div className="flex items-center gap-4 mb-6 group">
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-r from-orange-500/30 to-red-500/30 rounded-xl blur group-hover:blur-xl transition-all duration-500"></div>
@@ -30,12 +30,11 @@ const Footer = () => {
                 Error Tech
               </h2>
             </div>
-            <p className="text-[#9e9d9d] leading-relaxed mb-8 max-w-md font-light">
+            <p className="text-[#9e9d9d] leading-relaxed mb-6 md:mb-8 max-w-md font-light">
               Discover innovative opportunities and connect with forward-thinking companies that shape tomorrow&apos;s technology landscape.
             </p>
-            <div className="flex gap-4">
+            <div className="flex gap-4 mb-8 md:mb-0">
               {[
-             
                 { icon: Linkedin, href: "#", ariaLabel: "LinkedIn" },
                 { icon: Instagram, href: "#", ariaLabel: "Instagram" },
                 { icon: Github, href: "#", ariaLabel: "GitHub" }
@@ -62,7 +61,7 @@ const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div className="col-span-1 md:col-span-8 grid grid-cols-1 sm:grid-cols-3 gap-8 pt-5">
+          <div className="col-span-1 md:col-span-2 lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-4 lg:gap-8">
             {[
               { 
                 title: "Product",
@@ -78,7 +77,6 @@ const Footer = () => {
               }
             ].map((column, index) => (
               <div key={index} className="relative">
-                
                 <h3 className="text-orange-500 font-extralight underline-offset-4 underline mb-4 text-lg">
                   {column.title}
                 </h3>
@@ -102,13 +100,13 @@ const Footer = () => {
 
         {/* Bottom Section */}
         <div className="relative">
-          <div className="absolute inset-0 "></div>
-          <div className="relative border-t border-orange-950/30 pt-8">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-              <p className="text-sm">
+          <div className="absolute inset-0"></div>
+          <div className="relative border-t border-orange-950/30 pt-6 md:pt-8">
+            <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+              <p className="text-sm text-center sm:text-left">
                 © {new Date().getFullYear()} Error Tech. All rights reserved.
               </p>
-              <div className="flex gap-8">
+              <div className="flex gap-4 sm:gap-8">
                 {["Terms", "Privacy", "Refund Policy"].map((text, index) => (
                   <Link
                     key={index}

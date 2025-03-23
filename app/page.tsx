@@ -12,7 +12,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Divine Infotech</title>
+        <title>Error Tech</title>
         <meta name="description" content="Next-Generation AI Tools for Smarter Business" />
       </Head>
       <HeroSection />

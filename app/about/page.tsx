@@ -211,7 +211,7 @@ const AboutPage = () => {
                 >
                   <div className="absolute -left-8 -top-6 text-6xl text-orange-500/20 font-serif">&ldquo;</div>
                   <h2 className="text-3xl md:text-4xl font-light leading-relaxed text-gray-200/90">
-                    We at Divine Infotech are committed to helping you
+                    We at Error Tech are committed to helping you
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">
                       {" "}streamline your operations{" "}
                     </span>
@@ -232,8 +232,8 @@ const AboutPage = () => {
                   <div className="space-y-1">
                     <h3 className="text-2xl font-light">
                       <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">
-                        Tino Britty J
-                      </span>
+                        Satheshewaran V
+                   </span>
                     </h3>
                     <p className="text-gray-400">Founder and CEO</p>
                   </div>

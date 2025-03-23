@@ -2,7 +2,7 @@
 import React from 'react';
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { FaCode, FaMobile, FaDesktop,  FaRocket, FaDatabase, FaCloud, FaShieldAlt, FaUsers, FaChartBar } from 'react-icons/fa';
+import { FaCode, FaMobile, FaDesktop,  FaRocket, } from 'react-icons/fa';
 import { Sparkles } from 'lucide-react';
 
 const ServicesPage = () => {

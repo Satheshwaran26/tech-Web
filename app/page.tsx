@@ -18,8 +18,8 @@ const Home: NextPage = () => {
       <HeroSection />
       <TrustedBrands />
       <Works/>
-<TextFloat/>
-<StatsSection/>
+      <TextFloat/>
+      <StatsSection/>
       <FrequentlyAskedQuestions />
       <IdeaSection />
       

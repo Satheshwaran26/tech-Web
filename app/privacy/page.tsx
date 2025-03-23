@@ -6,59 +6,59 @@ const PrivacyPolicy: React.FC = () => {
       <div className="max-w-4xl mx-auto">
         <h1 className="text-5xl font-extralight text-[#c1c1c1] mb-6">Privacy Policy</h1>
         <p>
-          At Divine Infotech, we value your privacy and are committed to protecting your personal data. This Privacy Policy outlines how we collect, use, disclose, and safeguard your information when you use our website and services.
+          At Error Tech, we prioritize your privacy and are committed to safeguarding your personal data. This Privacy Policy outlines how we collect, use, protect, and handle your information when you use our technology solutions and services.
         </p>
 
         <h2 className="text-3xl font-extralight text-[#ffffff] mt-6 mb-2 underline-offset-2">Information We Collect</h2>
         <ul className="list-disc ml-6">
           <li>
-            We collect personal data that you voluntarily provide to us when you register for a course, use our services, or contact us. This may include your name, email address, phone number, payment information, and any other information you choose to provide.
+            We collect personal data that you voluntarily provide when you engage with our services, request consultations, or contact our support team. This may include your name, email address, company information, and project requirements.
           </li>
           <li>
-            We may also collect non-personal data automatically when you visit our website, such as your IP address, browser type, operating system, and browsing behavior.
+            We automatically collect certain technical data when you visit our website, including IP address, device information, browser type, and interaction patterns to optimize your experience.
           </li>
         </ul>
 
         <h2 className="text-3xl font-extralight text-[#ffffff] mt-6 mb-2">Use of Information</h2>
         <ul className="list-disc ml-6">
-          <li>We use your personal data to provide and improve our services, process payments, communicate with you, and comply with legal obligations.</li>
-          <li>We may use non-personal data for analytical purposes to better understand how our website is used and to enhance user experience.</li>
+          <li>We use your information to deliver and improve our technology solutions, provide technical support, send relevant updates about our services, and maintain our relationship with you.</li>
+          <li>We analyze usage patterns and performance metrics to enhance our platform's functionality, security, and user experience.</li>
         </ul>
 
         <h2 className="text-3xl font-extralight text-[#ffffff] mt-6 mb-2">Disclosure of Information</h2>
         <ul className="list-disc ml-6">
-          <li>We do not sell, trade, or otherwise transfer your personal data to third parties without your consent, except as required by law or to provide our services.</li>
-          <li>We may share your personal data with trusted third-party service providers who assist us in operating our website, processing payments, and delivering our services.</li>
+          <li>We do not sell or rent your personal data to third parties. Your information is only shared when necessary to provide our services or when legally required.</li>
+          <li>We may utilize trusted technology partners and service providers who assist us with infrastructure, analytics, and service delivery, all under strict confidentiality agreements.</li>
         </ul>
 
         <h2 className="text-3xl font-extralight text-[#ffffff] mt-6 mb-2">Data Security</h2>
         <ul className="list-disc ml-6">
-          <li>We implement appropriate technical and organizational measures to ensure the security of your personal data against unauthorized access, alteration, disclosure, or destruction.</li>
-          <li>While we strive to protect your personal data, we cannot guarantee its absolute security. Any transmission of data is at your own risk.</li>
+          <li>We implement industry-standard security measures including encryption, access controls, and regular security assessments to protect your data from unauthorized access or breach.</li>
+          <li>While we employ advanced security practices, no digital transmission or storage system is 100% secure. We continuously update our security protocols to address emerging threats.</li>
         </ul>
 
         <h2 className="text-3xl font-extralight text-[#ffffff] mt-6 mb-2">Your Rights</h2>
         <ul className="list-disc ml-6">
-          <li>You have the right to access, update, or delete your personal data that we hold. You may also object to or restrict our processing of your personal data.</li>
-          <li>If you wish to exercise any of these rights, please contact us at divineinfotech.edu@gmail.com. We will respond to your request in accordance with applicable laws.</li>
+          <li>You have the right to access, correct, or delete your personal data. You may also request information about how your data is processed and object to certain processing activities.</li>
+          <li>To exercise your data rights or address privacy concerns, please contact us at privacy@errortech.com. We aim to respond to all legitimate requests within 30 days.</li>
         </ul>
 
-        <h2 className="text-3xl font-extralight text-[#ffffff] mt-6 mb-2">Cookies</h2>
+        <h2 className="text-3xl font-extralight text-[#ffffff] mt-6 mb-2">Cookies and Tracking</h2>
         <ul className="list-disc ml-6">
-          <li>Our website uses cookies to enhance user experience and analyze website traffic. Cookies are small text files stored on your device that allow us to recognize your browser and capture certain information.</li>
-          <li>You can choose to disable cookies through your browser settings. However, disabling cookies may affect your ability to use certain features of our website.</li>
+          <li>Our platform uses cookies and similar technologies to enhance navigation, remember your preferences, analyze usage patterns, and optimize performance.</li>
+          <li>You can manage cookie preferences through your browser settings. Note that disabling certain cookies may limit functionality or performance of our website.</li>
         </ul>
 
         <h2 className="text-3xl font-extralight text-[#ffffff] mt-6 mb-2">Changes to this Privacy Policy</h2>
         <ul className="list-disc ml-6">
-          <li>We may update this Privacy Policy from time to time to reflect changes in our practices or legal requirements. We will notify you of any significant changes by posting the updated policy on our website.</li>
+          <li>We may update this policy periodically to reflect changes in our practices or regulatory requirements. Significant changes will be communicated through our website or direct notification when possible.</li>
         </ul>
 
         <h2 className="text-3xl font-extralight text-[#ffffff] mt-6 mb-2">Contact Information</h2>
-        <p>If you have any questions or concerns regarding this Privacy Policy, please contact us at divineinfotech.edu@gmail.com.</p>
+        <p>If you have questions or concerns about our privacy practices, please contact us at privacy@errortech.com.</p>
 
         <p className="mt-4">
-          By using our website and services, you consent to the terms of this Privacy Policy. If you do not agree with this policy, please do not use our website.
+          By using Error Tech services, you acknowledge and consent to the practices described in this Privacy Policy. We appreciate your trust and are committed to responsible data stewardship.
         </p>
       </div>
     </div>

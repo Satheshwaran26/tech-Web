@@ -539,66 +539,8 @@ const projects = [
   }
 ];
 
-const _techCategories = [
-  {
-    title: "Frontend",
-    icon: <FaCode className="w-6 h-6 text-orange-400" />,
-    technologies: [
-      { name: "React", icon: "/icons/react.svg" },
-      { name: "Next.js", icon: "/icons/nextjs.svg" },
-      { name: "TypeScript", icon: "/icons/typescript.svg" },
-      { name: "Tailwind CSS", icon: "/icons/tailwind.svg" },
-      { name: "Vue.js", icon: "/icons/vue.svg" },
-      { name: "Angular", icon: "/icons/angular.svg" }
-    ]
-  },
-  {
-    title: "Backend",
-    icon: <FaDatabase className="w-6 h-6 text-orange-400" />,
-    technologies: [
-      { name: "Node.js", icon: "/icons/nodejs.svg" },
-      { name: "Python", icon: "/icons/python.svg" },
-      { name: "Java", icon: "/icons/java.svg" },
-      { name: "PHP", icon: "/icons/php.svg" },
-      { name: "MongoDB", icon: "/icons/mongodb.svg" },
-      { name: "PostgreSQL", icon: "/icons/postgresql.svg" }
-    ]
-  },
-  {
-    title: "DevOps & Cloud",
-    icon: <FaCloud className="w-6 h-6 text-orange-400" />,
-    technologies: [
-      { name: "AWS", icon: "/icons/aws.svg" },
-      { name: "Docker", icon: "/icons/docker.svg" },
-      { name: "Kubernetes", icon: "/icons/kubernetes.svg" },
-      { name: "GitHub", icon: "/icons/github.svg" },
-      { name: "Jenkins", icon: "/icons/jenkins.svg" },
-      { name: "Azure", icon: "/icons/azure.svg" }
-    ]
-  }
-];
-
-const _techStats = [
-  {
-    value: "50+",
-    label: "Technologies",
-    icon: <FaCode className="w-6 h-6 text-orange-400" />
-  },
-  {
-    value: "100%",
-    label: "Code Coverage",
-    icon: <FaShieldAlt className="w-6 h-6 text-orange-400" />
-  },
-  {
-    value: "24/7",
-    label: "Support",
-    icon: <FaUsers className="w-6 h-6 text-orange-400" />
-  },
-  {
-    value: "99.9%",
-    label: "Uptime",
-    icon: <FaChartBar className="w-6 h-6 text-orange-400" />
-  }
-];
+// Temporarily removed unused variables
+// const _techCategories = [ ... ];
+// const _techStats = [ ... ];
 
 export default ServicesPage;

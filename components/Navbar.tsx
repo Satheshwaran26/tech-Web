@@ -7,7 +7,6 @@ import { usePathname } from "next/navigation";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [_isProductDropdownOpen, _setIsProductDropdownOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
 

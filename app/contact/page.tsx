@@ -182,16 +182,16 @@ const Contact = () => {
                   <div className="w-14 h-14 rounded-full border-2 border-orange-500/30 overflow-hidden mr-4 flex-shrink-0">
                     <div className="w-full h-full bg-gradient-to-r from-orange-500/50 to-red-500/50"></div>
                   </div>
-                  <div>
+          <div>
                     <p className="text-white text-lg font-light">Satheshwaran V</p>
                     <p className="text-gray-400 text-xs sm:text-sm">Founder & CEO, Error Tech</p>
-                  </div>
-                </div>
+          </div>
+        </div>
                 <p className="text-gray-300 italic text-sm sm:text-base">
                   &quot;We&apos;re dedicated to transforming businesses through innovative digital solutions. Let&apos;s create something amazing together.&quot;
                 </p>
-              </div>
-              
+      </div>
+      
               <motion.div 
                 whileHover={{ x: 5 }}
                 className="mt-6 flex items-center text-orange-500 group cursor-pointer"
@@ -222,50 +222,50 @@ const Contact = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 mb-6">
                   <div className="relative">
                     <FaUser className={`absolute left-4 top-1/2 -translate-y-1/2 transition-colors ${focused === 'name' ? 'text-orange-500' : 'text-gray-500'}`} />
-                    <input 
-                      type="text" 
-                      name="name" 
+      <input 
+        type="text" 
+        name="name" 
                       placeholder="Your Name" 
                       className="w-full py-3 px-12 bg-[#111]/70 border border-[#333] rounded-lg focus:outline-none focus:border-orange-500/50 text-white transition-all"
-                      value={formData.name}
-                      onChange={handleChange}
+        value={formData.name}
+        onChange={handleChange}
                       onFocus={() => setFocused('name')}
                       onBlur={() => setFocused(null)}
-                      required
-                    />
-                  </div>
-                  
+        required
+      />
+    </div>
+
                   <div className="relative">
                     <FaEnvelope className={`absolute left-4 top-1/2 -translate-y-1/2 transition-colors ${focused === 'email' ? 'text-orange-500' : 'text-gray-500'}`} />
-                    <input 
-                      type="email" 
-                      name="email" 
+      <input 
+        type="email" 
+        name="email" 
                       placeholder="Your Email" 
                       className="w-full py-3 px-12 bg-[#111]/70 border border-[#333] rounded-lg focus:outline-none focus:border-orange-500/50 text-white transition-all"
-                      value={formData.email}
-                      onChange={handleChange}
+        value={formData.email}
+        onChange={handleChange}
                       onFocus={() => setFocused('email')}
                       onBlur={() => setFocused(null)}
-                      required
-                    />
+        required
+      />
                   </div>
-                </div>
-                
+    </div>
+
                 <div className="mb-6 relative">
                   <FaComment className={`absolute left-4 top-6 transition-colors ${focused === 'message' ? 'text-orange-500' : 'text-gray-500'}`} />
-                  <textarea 
-                    name="message" 
+      <textarea 
+        name="message" 
                     placeholder="Your Message" 
                     rows={5}
                     className="w-full py-4 px-12 bg-[#111]/70 border border-[#333] rounded-lg focus:outline-none focus:border-orange-500/50 text-white transition-all resize-none"
-                    value={formData.message}
-                    onChange={handleChange}
+        value={formData.message}
+        onChange={handleChange}
                     onFocus={() => setFocused('message')}
                     onBlur={() => setFocused(null)}
-                    required
-                  ></textarea>
-                </div>
-                
+        required
+      ></textarea>
+    </div>
+
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                   <p className="text-xs sm:text-sm text-gray-400">By submitting, you agree to our <span className="text-orange-500 cursor-pointer hover:underline">Terms of Service</span></p>
                   
@@ -279,9 +279,9 @@ const Contact = () => {
                     <div className="absolute inset-0 bg-gradient-to-r from-orange-500/0 to-white/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                   </motion.button>
                 </div>
-              </form>
-            </div>
-            
+  </form>
+</div>
+
             {/* FAQ Teaser */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }}

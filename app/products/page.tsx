@@ -504,7 +504,7 @@ export default function ProductPage() {
               What Our <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">Clients</span> Say
             </h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              Don't take our word for it. Here's what industry leaders have to say about our products.
+              Don&apos;t take our word for it. Here&apos;s what industry leaders have to say about our products.
             </p>
           </motion.div>
 

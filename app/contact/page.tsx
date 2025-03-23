@@ -64,12 +64,12 @@ const Contact = () => {
   return (
     <div className=" min-h-screen">
       {/* Grid pattern overlay */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 overflow-hidden">
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]" />
       </div>
       
       {/* Gradient effects */}
-      <div className="absolute inset-0 pointer-events-none">
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute top-0 left-1/4 w-[800px] h-[800px] bg-gradient-to-br from-orange-500/10 to-transparent rounded-full blur-3xl animate-pulse-slow"></div>
         <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-gradient-to-br from-red-500/10 to-transparent rounded-full blur-3xl animate-pulse-slow"></div>
       </div>

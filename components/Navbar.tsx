@@ -79,9 +79,34 @@ const Navbar: React.FC = () => {
         </div>
 
         {/* Mobile Menu Button */}
-        <div className="lg:hidden">
-          <button onClick={() => setIsOpen(!isOpen)} className="text-white focus:outline-none">
-            {isOpen ? <span>&#10005;</span> : <span>&#9776;</span>}
+        <div className="lg:hidden ">
+          <button 
+            onClick={() => setIsOpen(!isOpen)} 
+            className="relative w-10 h-10  focus:outline-none flex items-center justify-center overflow-hidden group"
+            aria-label="Toggle menu"
+          >
+            <div className="relative w-8 h-8 flex items-center justify-center">
+              {/* Animated background */}
+              <div className={`absolute inset-0 transition-all duration-300
+                ${isOpen ? ' scale-100 opacity-100' : 'scale-0 opacity-0'}`}>
+              </div>
+              
+              {/* The hamburger icon */}
+              <div className="relative z-10 flex flex-col items-center justify-center space-y-1.5 w-6">
+                <span className={`block h-0.5 w-full transform transition-all duration-300 ease-in-out 
+                  bg-gradient-to-r from-orange-400 to-red-500
+                  ${isOpen ? 'rotate-45 translate-y-2' : ''}`}>
+                </span>
+                <span className={`block h-0.5 transition-all duration-300 ease-in-out
+                  bg-gradient-to-r from-orange-400 to-red-500
+                  ${isOpen ? 'w-0 opacity-0' : 'w-full opacity-100'}`}>
+                </span>
+                <span className={`block h-0.5 w-full transform transition-all duration-300 ease-in-out
+                  bg-gradient-to-r from-orange-400 to-red-500
+                  ${isOpen ? '-rotate-45 -translate-y-2' : ''}`}>
+                </span>
+              </div>
+            </div>
           </button>
         </div>
       </div>
@@ -89,18 +114,17 @@ const Navbar: React.FC = () => {
       {/* Mobile Menu */}
       {isOpen && (
         <div
-          className={`lg:hidden text-white py-4 px-6 space-y-4 transition-all duration-300 ${
-            scrolled ? "bg-black/90 backdrop-blur-md" : "bg-black"
-          }`}
+          className="lg:hidden text-white py-6 px-6 space-y-4 transition-all duration-300 bg-[#1212122d] backdrop-blur-md "
         >
-          {["/", "/about", "/services", "/blog", "/contact"].map((path, index) => (
+          {["/", "/about", "/services", "/blog", "/products", "/contact"].map((path, index) => (
             <Link
               key={index}
               href={path}
-              className={`block transition ${
+              onClick={() => setIsOpen(false)}
+              className={`block py-2 px-2 rounded transition-all duration-300 ${
                 isActive(path)
-                  ? "bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent font-normal"
-                  : "hover:text-orange-400"
+                  ? "text-orange-400 font-normal"
+                  : "text-gray-300 hover:text-white hover:bg-gradient-to-r hover:from-orange-400/10 hover:to-red-500/10"
               }`}
             >
               {path === "/" ? "Home" : path.replace("/", "").charAt(0).toUpperCase() + path.slice(2)}

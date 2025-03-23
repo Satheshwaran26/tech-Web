@@ -9,7 +9,15 @@ import { faCheck } from "@fortawesome/free-solid-svg-icons";
 const HeroSection: React.FC = () => {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
 
-  const words = ["AI Tools", "Solutions", "Automation", "Innovation"];
+  const words = [
+    "Tech Solutions",
+    "Web Services",
+    "Mobile Apps",
+    "Cloud Computing",
+    "IT Consulting",
+    "Digital Marketing",
+    "Cyber Security"
+  ];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -20,19 +28,19 @@ const HeroSection: React.FC = () => {
   }, [words.length]);
 
   return (
-    <div className="relative bg-[#080808]">
+    <div className="relative bg-[#080808] ">
       <div className="relative overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]" />
         </div>
-        <div className="container mx-auto text-center pt-[120px] px-4 relative z-10">
-          <h3 className="mb-4 text-gray-200 font-extralight text-sm border border-[#343434] px-4 py-2 rounded-full inline-block">
-            ✨ Explore the Capital Product
+        <div className="container mx-auto text-center pb-22 pt-[120px] px-4 relative z-10">
+          <h3 className="mb-4 text-gray-200 font-extralight text-sm border bg-[#1212126e] border-[#343434] px-4 py-2 rounded-full inline-block">
+            ✨ Welcom to Error Tech
           </h3>
-
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extralight text-gray-200 w-11/12 sm:w-10/12 mb-6 mx-auto text-center">
-            Next-Generation
-            <span className="text-orange-400 font-light ml-2">
+        
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extralight  w-11/12 sm:w-10/12 mb-6 mx-auto text-center">
+            Empowering Your <span></span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500 font-extralight ml-2">
               <AnimatePresence mode="wait">
                 <motion.span
                   key={currentWordIndex}
@@ -45,19 +53,20 @@ const HeroSection: React.FC = () => {
                 </motion.span>
               </AnimatePresence>
             </span>{" "}
-            for Smarter Business
+            Journey
           </h1>
-          <p className="sm:text-md text-[#767676] font-light mb-2 w-11/12 sm:w-9/12 mx-auto">
-            Transform the way you do business with our <br />
-            AI-powered SaaS platform. Our cutting-edge technology.
-          </p>
+          <p className="sm:text-lg text-[#767676] font-light mb-8 w-11/12 sm:w-7/12 mx-auto">
+              From concept to creation, we deliver cutting-edge solutions that transform businesses. 
+              Experience innovation with our comprehensive tech services and expert development team.
+            </p>
+
 
           {/* Product Selector and Go Button */}
-          <div className="flex flex-wrap justify-center gap-4 py-6">
+          <div className="flex flex-wrap justify-center gap-4 pb-6">
             {/* Get Started Button */}
             <button
               onClick={() => alert("Get Started clicked!")}
-              className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-400 px-4 py-2 text-base sm:text-lg flex items-center font-extralight transition-colors border-[#212020] border rounded-lg"
+              className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-400 px-4 py-2 text-base sm:text-lg flex items-center font-light transition-colors border-[#212020] border rounded-lg"
             >
               Get Started
             </button>
@@ -72,20 +81,26 @@ const HeroSection: React.FC = () => {
           </div>
 
           {/* Features List */}
-          <div className="flex flex-wrap justify-center gap-4 text-[#767676] text-sm sm:text-base mb-6">
-            <div className="flex items-center gap-2">
-              <FontAwesomeIcon icon={faCheck} className="text-orange-500 " />
-              No credit card required
-            </div>
-            <div className="flex items-center gap-2">
-              <FontAwesomeIcon icon={faCheck} className="text-orange-500" />
-              14-days free trial
-            </div>
-            <div className="flex items-center gap-2">
-              <FontAwesomeIcon icon={faCheck} className="text-orange-500" />
-              Generate in seconds using AI
-            </div>
-          </div>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.8 }}
+            className="flex flex-wrap justify-center gap-6 text-base pb-16 text-gray-400 pt-6"
+          >
+            {[
+              "No credit card required",
+              "14-days free trial",
+              "AI-powered solutions"
+            ].map((feature, index) => (
+              <div key={index} className="flex items-center gap-2">
+                <span className="w-6 h-6 rounded-full bg-orange-500/10 flex items-center justify-center">
+                  <FontAwesomeIcon icon={faCheck} className="text-orange-500 w-4 h-4" />
+                </span>
+                {feature}
+              </div>
+            ))}
+          </motion.div>
+
         </div>
 
         {/* Floating 3D Images */}

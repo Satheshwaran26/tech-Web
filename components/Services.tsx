@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAndroid } from "@fortawesome/free-brands-svg-icons"; // ✅ Correct import for Android icon
 import { faGlobe, faCode } from "@fortawesome/free-solid-svg-icons";
@@ -6,9 +7,34 @@ import { faGlobe, faCode } from "@fortawesome/free-solid-svg-icons";
 export default function Solutions() {
   return (
     <div className="max-w-full lg:max-w-[1400px] mx-auto p-6">
-      <p className="py-2 px-3 rounded-lg border-2 border-[#1c1c1c] inline-block mb-4 bg-clip-text text-transparent bg-gradient-to-r from-orange-400 to-red-400 text-center md:text-left">
-        Services
-      </p>
+     <div className="text-center mb-20">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              className="inline-block mb-4"
+            >
+              <span className="text-sm text-orange-400 tracking-wider uppercase bg-orange-500/5 px-4 py-2 rounded-full border border-orange-500/10">
+                Our Services
+              </span>
+            </motion.div>
+            <motion.h2
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              className="text-4xl md:text-5xl font-light mb-6"
+            >
+              Transforming Ideas into
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500 ml-3">
+                Digital Reality
+              </span>
+            </motion.h2>
+            <motion.p
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              className="text-gray-400 max-w-2xl mx-auto text-lg"
+            >
+              Comprehensive digital solutions tailored for modern businesses
+            </motion.p>
+          </div>
 
       <div className="flex flex-col md:flex-row justify-between items-center mb-10">
         <h1 className="text-4xl md:text-6xl text-[#d0d0d0] font-extralight text-center md:text-left">

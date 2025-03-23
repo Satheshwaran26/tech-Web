@@ -4,11 +4,26 @@ import { FaPlus, FaMinus } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 
 const faqs = [
-  { question: "What is Divine Infotech, and what does it do?", answer: "Divine Infotech is a pioneering career education startup specializing in developing innovative solutions in Web applications, Android applications, and Data Science projects. Our programs offer advanced training, hands-on practice, and expert guidance to help individuals and businesses grow." },
-  { question: "How can Divine Infotech technologies help my business?", answer: "We streamline your operations, enhance security, boost your online presence, and increase productivity, driving business growth." },
-  { question: "How experienced is the Divine Infotech technologies team?", answer: "Our team consists of certified experts with extensive experience in various IT domains, ensuring top-notch service delivery." },
-  { question: "What makes us different from other Service providers?", answer: "Our comprehensive offerings, experienced solutions, and commitment to excellence set us apart from other providers." },
-  { question: "What kind of support does Divine Infotech technologies provide?", answer: "We offer 24/7 premium support to ensure seamless integration and continuous assistance for all our services." },
+  { 
+    question: "What is Error Tech, and what services do you offer?", 
+    answer: "Error Tech is a cutting-edge technology company specializing in web development, mobile solutions, and software engineering. We provide comprehensive digital solutions including custom software development, cloud services, digital transformation, and IT consulting to help businesses innovate and grow." 
+  },
+  { 
+    question: "How can Error Tech's solutions benefit my business?", 
+    answer: "Our solutions help streamline your business operations, enhance digital presence, and drive growth through innovative technology. We focus on delivering scalable, secure, and high-performance solutions that adapt to your business needs, improve efficiency, and provide competitive advantages in the digital marketplace." 
+  },
+  { 
+    question: "What makes Error Tech different from other tech companies?", 
+    answer: "We stand out through our commitment to innovation, custom-tailored solutions, and exceptional client service. Our team of expert developers and consultants combines cutting-edge technology with industry best practices to deliver solutions that exceed expectations. We prioritize long-term partnerships and ensure our solutions grow with your business." 
+  },
+  { 
+    question: "What technologies and platforms do you work with?", 
+    answer: "We work with a wide range of modern technologies including React, Next.js, Node.js, Python, and cloud platforms like AWS and Azure. Our expertise spans across web development, mobile app development, cloud computing, AI/ML integration, and enterprise software solutions." 
+  },
+  { 
+    question: "What kind of support and maintenance do you provide?", 
+    answer: "We offer comprehensive support and maintenance services including 24/7 technical support, regular updates, performance monitoring, security patches, and continuous improvement recommendations. Our team ensures your solutions remain optimal, secure, and up-to-date with the latest technology trends." 
+  },
 ];
 
 // Animation variants
@@ -69,11 +84,20 @@ export default function FAQ() {
   };
 
   return (
-    <div className="flex justify-center items-center pt-16 bg-[#080808] px-4 relative overflow-hidden">
+    <div id="faq" className="flex justify-center items-center pt-16 bg-[#080808] px-4 relative overflow-hidden">
       {/* Orange gradient blur background */}
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[#FF6B00]/10 rounded-full blur-[150px]" />
       
       <div className="max-w-3xl w-full text-center relative z-10">
+      <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              className="inline-block mb-4"
+            >
+              <span className="text-sm text-orange-400 tracking-wider  bg-orange-500/5 px-4 py-2 rounded-full border border-orange-500/10">
+                FAQ
+              </span>
+            </motion.div>
         <motion.h1 
           className="text-5xl font-extralight text-[#d0d0d0] mb-4"
           initial={{ opacity: 0, y: -20 }}
@@ -102,7 +126,7 @@ export default function FAQ() {
               key={index}
               variants={itemVariants}
               className={`border border-[#1c1c1c] bg-transparent rounded-lg cursor-pointer transition-all px-4 py-5
-                ${openIndex === index ? "bg-gradient-to-b from-[#101010] via-[#080808] to-[#080808]" : "bg-[#080808]"}`}
+                ${openIndex === index ? "bg-transparent": "bg-transparent"}`}
               onClick={() => toggleFAQ(index)}
               whileHover={{ 
                

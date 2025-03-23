@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import "tailwindcss/tailwind.css";
 
 const worksData = [
@@ -34,13 +35,25 @@ const worksData = [
 
 const Works = () => {
   return (
-    
-    <div className="bg-[#080808] py-28 relative overflow-hidden text-gray-300">
-      <div className="text-center mb-12">
-        <h1 className="text-6xl font-extralight text-gray-300">Our Works.</h1>
-        <p className="text-gray-400 font-normal mt-2">
-          Explore our featured projects and platforms
-        </p>
+    <div className="bg-[#080808] py-24 relative overflow-hidden text-gray-300">
+      <div className="text-center mb-20">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          className="inline-block mb-4"
+        >
+          <span className="text-sm text-orange-400 tracking-wider bg-orange-500/5 px-4 py-2 rounded-full border border-orange-500/10">
+            Our Works
+          </span>
+        </motion.div>
+        <h1 className="text-6xl font-extralight text-transparent bg-clip-text bg-gradient-to-r from-orange-400  to-red-500 mb-4">
+          Our Creative Works
+        </h1>
+        <div className="max-w-2xl mx-auto">
+          <p className="text-gray-400 text-lg font-light">
+            Explore our innovative solutions and successful projects that showcase our expertise in digital transformation
+          </p>
+        </div>
       </div>
 
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[#FF6B00]/10 rounded-full blur-[150px]" />

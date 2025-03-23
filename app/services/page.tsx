@@ -3,13 +3,14 @@
 import React from 'react';
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { FaCode, FaMobile, FaDesktop, FaRocket, FaDatabase, FaCloud, FaShieldAlt, FaUsers, FaChartBar } from 'react-icons/fa';
+import { FaCode, FaMobile, FaDesktop,  FaRocket, FaDatabase, FaCloud, FaShieldAlt, FaUsers, FaChartBar } from 'react-icons/fa';
+import { Sparkles } from 'lucide-react';
 
 const ServicesPage = () => {
   return (
     <div className="min-h-screen bg-[#080808]">
       {/* Hero Section */}
-      <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[75vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           {/* Animated Grid Background */}
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]" />
@@ -47,15 +48,19 @@ const ServicesPage = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-center max-w-5xl mx-auto"
           >
-            <motion.span
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.2 }}
-              className="inline-block px-4 py-2 rounded-full text-sm bg-orange-500/10 text-orange-400 
-                        border border-orange-500/20 mb-6 font-extralight"
+          <motion.div
+              initial={{ scale: 0.9 }}
+              animate={{ scale: 1 }}
+              className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-orange-500/5 border border-orange-500/20 backdrop-blur-sm mb-6"
             >
-              Our Services
-            </motion.span>
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+              >
+                <Sparkles className="w-4 h-4 text-orange-500" />
+              </motion.div>
+              <span className="text-orange-500  text-xs sm:text-sm font-normal">Services</span>
+            </motion.div>
 
             <motion.h1
               initial={{ opacity: 0, y: 20 }}

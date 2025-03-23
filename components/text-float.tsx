@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Smartphone, Globe, Code, ArrowRight } from "lucide-react";
+import { Smartphone, Globe, Code, ArrowRight, Check } from "lucide-react";
 
 
 const services = [
@@ -45,24 +45,34 @@ const ServiceSection: React.FC = () => {
     
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-20 space-y-4"
-        >
-          
-          
-          <h2 className="text-5xl font-extralight text-white">Our
-           Services    
-                                   
-          </h2>
-          
-          <p className="text-[#909090] text-lg max-w-2xl mx-auto">
-            We deliver cutting-edge technology solutions tailored to your specific needs
-          </p>
-        </motion.div>
-
+        <div className="text-center mb-20">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              className="inline-block mb-4"
+            >
+              <span className="text-sm text-orange-400 tracking-wider  bg-orange-500/5 px-4 py-2 rounded-full border border-orange-500/10">
+                Our Services
+              </span>
+            </motion.div>
+            <motion.h2
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              className="text-4xl md:text-5xl font-light mb-6"
+            >
+              Transforming Ideas into
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500 ml-3">
+                Digital Reality
+              </span>
+            </motion.h2>
+            <motion.p
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              className="text-gray-400 max-w-2xl mx-auto text-lg"
+            >
+              Comprehensive digital solutions tailored for modern businesses
+            </motion.p>
+          </div>
         {/* Services Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
@@ -100,8 +110,8 @@ const ServiceSection: React.FC = () => {
                   <ul className="space-y-3 pt-2">
                     {service.features.map((feature, i) => (
                       <li key={i} className="flex items-center gap-3 text-[#A0A0A0]">
-                        <div className={`w-1.5 h-1.5 rounded-full ${service.color.replace('text-', 'bg-')}`} />
-                        <span className="font-light">{feature}</span>
+                        <Check className={`w-4 h-4 ${service.color}`} />
+                        <span className="font-light text-sm">{feature}</span>
                       </li>
                     ))}
                   </ul>

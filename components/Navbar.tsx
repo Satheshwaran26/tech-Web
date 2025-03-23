@@ -2,86 +2,79 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { ChevronDown } from "lucide-react";
+import { usePathname } from "next/navigation";
+
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isProductDropdownOpen, setIsProductDropdownOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
-    const handleScroll = () => {
-      const offset = window.scrollY;
-      if (offset > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const isActive = (path: string) => pathname === path;
+
   return (
-    
-    <nav className={`sticky top-0 z-50 py-4 transition-all duration-300 bg-black ${
-      scrolled ? 'bg-black/10 backdrop-blur-sm   shadow-lg' : 'bg-transparent'
-    }`}>
-  
-      
-      <div className="max-w-[1800px] mx-auto px-6 flex justify-between items-center ">
+    <nav
+      className={`sticky top-0 z-50 py-4  transition-all duration-300 ${
+        scrolled ? "bg-black/10 backdrop-blur-sm shadow-lg" : "bg-transparent"
+      }`}
+    >
+      <div className="max-w-[1800px] mx-auto px-6 flex justify-between items-center">
         {/* Logo */}
-        <div className="flex-shrink-0 flex items-center font-light text-xl">
-            <Link href="/" className="flex items-center">
-              <Image
-                src="/images/Et.png"
-                alt="Logo"
-                width={65}
-                height={65}
-                className="cursor-pointer"
-              />
-              <span className="ml-2 text-white  text-[1.2em] font-light">Error Tech</span>
-            </Link>
-          </div>
-
-        {/* Desktop Menu */}
-        <div className={`hidden lg:flex items-center space-x-8 text-lg py-3 px-5 text-gray-300 font-light rounded-full ml-16 border transition-all duration-300 ${
-          scrolled ? 'bg-[#0e0e0e]/80 border-[#212020]/50' : 'bg-[#0e0e0e] border-[#212020]'
-        }`}>
-          <Link href="/" className="hover:text-orange-400 transition">Home</Link>
-          <Link href="/about" className="hover:text-orange-400 transition">About</Link>
-          <Link href="/serviceq" className="hover:text-orange-400 transition">Services</Link>
-          <Link href="/blog" className="hover:text-orange-400 transition">Blog</Link>
-
-          {/* Product Dropdown */}
+        <div className="flex items-center space-x-3 group">
           <div className="relative">
-            <button
-              onClick={() => setIsProductDropdownOpen(!isProductDropdownOpen)}
-              className="flex items-center hover:text-orange-400 transition"
-            >
-              Products <ChevronDown className="ml-1 w-5 h-5" />
-            </button>
-            {isProductDropdownOpen && (
-              <div className={`absolute left-0 mt-4 w-48 text-gray-300 border shadow-lg rounded-lg py-2 transition-all duration-300 ${
-                scrolled ? 'bg-[#0e0e0e]/90 backdrop-blur-md border-[#252525]/70' : 'bg-[#0e0e0e] border-[#252525]'
-              }`}>
-                <Link href="/products/billingpage" className="block px-4 py-2 hover:bg-[#1a1a1a]/70">Billing Software</Link>
-                <Link href="/products/ai-model" className="block px-4 py-2 hover:bg-[#1a1a1a]/70">AI Model</Link>
-              </div>
-            )}
+            <div className="absolute inset-0 bg-gradient-to-r from-orange-500/30 to-red-500/30 rounded-xl blur group-hover:blur-xl transition-all duration-500"></div>
+            <Image
+              src="/images/Et.png"
+              alt="Error Tech"
+              width={64}
+              height={64}
+              className="relative w-12 h-12 rounded-xl transform group-hover:scale-105 transition-all duration-500"
+            />
           </div>
+          <h2 className="text-2xl font-light bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
+            Error Tech
+          </h2>
         </div>
 
-        {/* Buttons */}
+        {/* Desktop Menu */}
+        <div
+          className={`hidden lg:flex items-center space-x-8 text-lg py-3 px-5 text-gray-300 font-light rounded-full border transition-all duration-300 ${
+            scrolled ? "bg-[#0e0e0e]/80 border-[#212020]/50" : "bg-[#0e0e0e] border-[#212020]"
+          }`}
+        >
+          {["/", "/about", "/services", "/blog ", "/products"].map((path, index) => (
+            <Link
+              key={index}
+              href={path}
+              className={`transition ${
+                isActive(path)
+                  ? "bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent font-normal"
+                  : "hover:text-orange-400"
+              }`}
+            >
+              {path === "/" ? "Home" : path.replace("/", "").charAt(0).toUpperCase() + path.slice(2)}
+            </Link>
+          ))}
+
+          
+        </div>
+
+  
         <div className="hidden lg:flex space-x-4">
           <Link href="/contact">
-            <button className={`px-6 py-2 text-lg border font-normal bg-gradient-to-r from-orange-400 to-red-400 text-transparent bg-clip-text rounded-full shadow-lg hover:scale-105 hover:brightness-110 transition-all duration-300 ${
-              scrolled ? 'border-[#212020]/50' : 'border-[#212020]'
-            }`}>
-              Get Started
+            <button
+              className={`px-6 py-2 text-xl border font-normal bg-gradient-to-r from-orange-400 to-red-400 text-transparent bg-clip-text rounded-full shadow-lg hover:scale-105 hover:brightness-110 transition-all duration-300 ${
+                scrolled ? "border-[#212020]/50" : "border-[#212020]"
+              }`}
+            >
+              Contact
             </button>
           </Link>
         </div>
@@ -96,31 +89,24 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className={`lg:hidden text-white py-4 px-6 space-y-4 transition-all duration-300 ${
-          scrolled ? 'bg-black/90 backdrop-blur-md' : 'bg-black'
-        }`}>
-          <Link href="/" className="block hover:text-orange-400">Home</Link>
-          
-          <Link href="/about" className="block hover:text-orange-400 transition">About</Link>
-          <Link href="/serviceq" className= "block hover:text-orange-400 transition">Services</Link>
-          <Link href="/blog" className=" block hover:text-orange-400 transition">Blog</Link>
-          <div className="relative">
-            <button
-              onClick={() => setIsProductDropdownOpen(!isProductDropdownOpen)}
-              className="flex items-center hover:text-orange-400 transition"
+        <div
+          className={`lg:hidden text-white py-4 px-6 space-y-4 transition-all duration-300 ${
+            scrolled ? "bg-black/90 backdrop-blur-md" : "bg-black"
+          }`}
+        >
+          {["/", "/about", "/services", "/blog", "/contact"].map((path, index) => (
+            <Link
+              key={index}
+              href={path}
+              className={`block transition ${
+                isActive(path)
+                  ? "bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent font-normal"
+                  : "hover:text-orange-400"
+              }`}
             >
-              Products <ChevronDown className="ml-1 w-5 h-5" />
-            </button>
-            {isProductDropdownOpen && (
-              <div className={`absolute left-0 mt-4 w-48 text-gray-300 border shadow-lg rounded-lg py-2 transition-all duration-300 ${
-                scrolled ? 'bg-[#0e0e0e]/90 backdrop-blur-md border-[#252525]/70' : 'bg-[#0e0e0e] border-[#252525]'
-              }`}>
-                <Link href="/products/billingpage" className="block px-4 py-2 hover:bg-[#1a1a1a]/70">Billing Software</Link>
-                <Link href="/products/ai-model" className="block px-4 py-2 hover:bg-[#1a1a1a]/70">AI Model</Link>
-              </div>
-            )}
-          </div>
-          <Link href="/get-started" className="block hover:text-orange-400">Get Started</Link>
+              {path === "/" ? "Home" : path.replace("/", "").charAt(0).toUpperCase() + path.slice(2)}
+            </Link>
+          ))}
         </div>
       )}
     </nav>

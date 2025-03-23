@@ -1,76 +1,124 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebookF, faTwitter, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
-import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
-
-interface FooterColumnProps {
-  title: string;
-  links: string[];
-}
-
-interface FooterLinkProps {
-  href: string;
-  text: string;
-}
-
-interface SocialIconProps {
-  href: string;
-  icon: IconDefinition;
-}
+import {  Linkedin, Instagram, Github } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#080808] text-[#9e9d9d] py-8 px-4 border-t-2 border-t-[#1c1c1c]">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center">
-        {/* Logo & Description */}
-        <div className="mb-6 pb-10 md:mb-0">
-          <div className="flex items-center mb-4">
-            <Image
-              src="/images/Et.png"
-              alt="Company logo"
-              width={55}
-              height={55}
-              className="w-16 h-16 mr-2"
-            />
-            <span className="text-xl font-normal text-[#d0d0d0]">Error Tech </span>
-          </div>
-          <p className="text-[#9e9d9d]">
-            Find a job you love and research the fastest-growing companies.
-          </p>
-        </div>
-
-        {/* Navigation Links */}
-        <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8 mb-10">
-          {[ 
-            { title: "Product", links: ["Remote Job", "Startup", "Investor & Board", "Company"] },
-            { title: "Features", links: ["For Candidate", "For Company", "Society"] },
-            { title: "About Us", links: ["Documentation", "Contact Us", "Career"] },
-          ].map((column, index) => (
-            <FooterColumn key={index} title={column.title} links={column.links} />
-          ))}
-        </div>
+    <footer className="relative bg-[#080808] text-[#9e9d9d] py-4 overflow-hidden border-t-2 border-[#111111] pb-6">
+      {/* Decorative Elements */}
+      <div className="absolute inset-0 opacity-40">
+        <div className="absolute top-0 left-1/3 w-[500px] h-[500px] bg-gradient-to-br from-orange-500/20 to-transparent rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-1/3 w-[500px] h-[500px] bg-gradient-to-br from-red-500/20 to-transparent rounded-full blur-3xl"></div>
       </div>
 
-      {/* Bottom Section */}
-      <div className="border-t border-[#1c1c1c] mt-8 pt-4 text-[#9e9d9d]">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center">
-          <p className="text-[#9e9d9d] text-sm">© {new Date().getFullYear()} Error Tech, Inc.</p>
-
-          <div className="flex space-x-4 mt-4 md:mt-0">
-            {["Terms", "Privacy", "Refund Policy"].map((text, index) => (
-              <FooterLink 
-                key={index} 
-                href={text === "Terms" ? "/terms" : text === "Privacy" ? "/privacy" : "/refund"} 
-                text={text} 
-              />
-            ))}
-
-            {/* Social Links */}
-            <div className="flex space-x-4 ml-4">
-              {[faFacebookF, faTwitter, faLinkedinIn].map((icon, index) => (
-                <SocialIcon key={index} href="#" icon={icon} />
+      <div className="relative max-w-[1800px] mx-auto px-4  pt-6">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
+          {/* Brand Section */}
+          <div className="col-span-1 md:col-span-4">
+            <div className="flex items-center gap-4 mb-6 group">
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-orange-500/30 to-red-500/30 rounded-xl blur group-hover:blur-xl transition-all duration-500"></div>
+                <Image
+                  src="/images/Et.png"
+                  alt="Error Tech"
+                  width={48}
+                  height={48}
+                  className="relative w-12 h-12 rounded-xl transform group-hover:scale-105 transition-all duration-500"
+                />
+              </div>
+              <h2 className="text-2xl font-light bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
+                Error Tech
+              </h2>
+            </div>
+            <p className="text-[#9e9d9d] leading-relaxed mb-8 max-w-md font-light">
+              Discover innovative opportunities and connect with forward-thinking companies that shape tomorrow's technology landscape.
+            </p>
+            <div className="flex gap-4">
+              {[
+             
+                { icon: Linkedin, href: "#", ariaLabel: "LinkedIn" },
+                { icon: Instagram, href: "#", ariaLabel: "Instagram" },
+                { icon: Github, href: "#", ariaLabel: "GitHub" }
+              ].map((social, index) => (
+                <Link
+                  key={index}
+                  href={social.href}
+                  aria-label={social.ariaLabel}
+                  className={`w-8 h-8 flex items-center justify-center rounded-lg bg-[#111111] 
+                    relative overflow-hidden group
+                    transform hover:-translate-y-1 hover:shadow-lg hover:shadow-orange-500/30
+                    transition-all duration-300`}
+                >
+                  <div className="absolute inset-0 bg-gradient-to-tr from-orange-600/20 to-red-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 scale-0 group-hover:scale-100 rounded-lg border border-orange-500/30 transition-transform duration-300"></div>
+                  <social.icon 
+                    size={16}
+                    strokeWidth={1.75}
+                    className="relative z-10 text-gray-400 group-hover:text-orange-500 transition-colors duration-300"
+                  />
+                </Link>
               ))}
+            </div>
+          </div>
+
+          {/* Quick Links */}
+          <div className="col-span-1 md:col-span-8 grid grid-cols-1 sm:grid-cols-3 gap-8 pt-5">
+            {[
+              { 
+                title: "Product",
+                links: ["Remote Job", "Startup", "Investor & Board", "Company"]
+              },
+              { 
+                title: "Features",
+                links: ["For Candidate", "For Company", "Society"]
+              },
+              { 
+                title: "About Us",
+                links: ["Documentation", "Contact Us", "Career"]
+              }
+            ].map((column, index) => (
+              <div key={index} className="relative">
+                
+                <h3 className="text-orange-500 font-extralight underline-offset-4 underline mb-4 text-lg">
+                  {column.title}
+                </h3>
+                <ul className="space-y-3">
+                  {column.links.map((link, linkIndex) => (
+                    <li key={linkIndex}>
+                      <Link 
+                        href="#" 
+                        className="group flex items-center font-light text-[#9e9d9d] hover:text-orange-400 transition-colors duration-300"
+                      >
+                        <span className="w-0 h-px bg-gradient-to-r from-orange-500 to-red-500 group-hover:w-3 mr-0 group-hover:mr-2 transition-all duration-300"></span>
+                        {link}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Bottom Section */}
+        <div className="relative">
+          <div className="absolute inset-0 "></div>
+          <div className="relative border-t border-orange-950/30 pt-8">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+              <p className="text-sm">
+                © {new Date().getFullYear()} Error Tech. All rights reserved.
+              </p>
+              <div className="flex gap-8">
+                {["Terms", "Privacy", "Refund Policy"].map((text, index) => (
+                  <Link
+                    key={index}
+                    href={text === "Terms" ? "/terms" : text === "Privacy" ? "/privacy" : "/refund"}
+                    className="text-sm hover:text-orange-400 transition-colors duration-300"
+                  >
+                    {text}
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -78,28 +126,5 @@ const Footer = () => {
     </footer>
   );
 };
-
-const FooterColumn: React.FC<FooterColumnProps> = ({ title, links }) => (
-  <div>
-    <h3 className="text-[#d0d0d0] font-semibold mb-2">{title}</h3>
-    <ul className="text-[#9e9d9d] space-y-1">
-      {links.map((link, index) => (
-        <li key={index}>{link}</li>
-      ))}
-    </ul>
-  </div>
-);
-
-const FooterLink: React.FC<FooterLinkProps> = ({ href, text }) => (
-  <Link href={href} className="text-[#9e9d9d] text-sm">
-    {text}
-  </Link>
-);
-
-const SocialIcon: React.FC<SocialIconProps> = ({ href, icon }) => (
-  <Link href={href} className="text-gray-600 hover:text-gray-900">
-    <FontAwesomeIcon icon={icon} className="text-lg" />
-  </Link>
-);
 
 export default Footer;

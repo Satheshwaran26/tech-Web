@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const TrustedBrands: React.FC = () => {
   const [logos, setLogos] = useState<{ src: string; alt: string }[]>([]);
@@ -21,7 +22,7 @@ const TrustedBrands: React.FC = () => {
             { src: "/images/msi.png", alt: "Microsoft Logo" },
           ],
         };
-        setLogos(response.data.slice(0, 6)); // Limit to 6 logos
+        setLogos(response.data.slice(0, 6));
       } catch (error) {
         console.error("Error fetching logos:", error);
       } finally {
@@ -33,35 +34,50 @@ const TrustedBrands: React.FC = () => {
   }, []);
 
   return (
-    <section className="bg-[#080808] py-12 sm:py-16 md:py-20 lg:py-28">
-      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-2xl sm:text-3xl font-extralight mb-8 sm:mb-12 text-[#676767] text-center">
-          Brands That Trust Us
-        </h2>
+    <section className="bg-transparent  pt-8">
+      <div className="max-w-[1200px] mx-auto px-6">
+        <div className="text-center mb-8">
+        
+          <motion.h2
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            className="text-3xl md:text-4xl font-light"
+          >
+            Trusted by
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500 ml-2">
+              Industry Leaders
+            </span>
+          </motion.h2>
+        </div>
         
         {isLoading ? (
-          <p className="text-silver text-center">Loading logos...</p>
+          <div className="flex justify-center">
+            <div className="w-10 h-10 border-2 border-orange-500 rounded-full animate-spin border-t-transparent"></div>
+          </div>
         ) : (
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 sm:gap-8 md:gap-10">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8"
+          >
             {logos.map((logo, index) => (
-              <div 
-                key={index} 
-                className="flex items-center justify-center p-4 hover:scale-105 transition-transform duration-300"
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ delay: index * 0.1 }}
+                className="flex items-center justify-center p-2 rounded-xl"
               >
                 <Image
                   src={logo.src}
                   alt={logo.alt}
-                  width={90}
-                  height={90}
-                  className="object-contain grayscale hover:grayscale-0 transition-all duration-300"
-                  sizes="(max-width: 640px) 45vw, 
-                         (max-width: 768px) 30vw,
-                         (max-width: 1024px) 20vw,
-                         15vw"
+                  width={110}
+                  height={110}
+                  className="object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
                 />
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         )}
       </div>
     </section>

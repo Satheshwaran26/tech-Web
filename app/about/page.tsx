@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { FaGlobe, FaMobile, FaLaptopCode, FaLinkedin, FaTwitter } from 'react-icons/fa';
-
+import { Sparkles } from 'lucide-react';
 const AboutPage = () => {
   return (
     <div className="min-h-screen bg-[#080808]">
@@ -11,7 +11,35 @@ const AboutPage = () => {
       <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-[#080808]">
         {/* Background Grid */}
         <div className="absolute inset-0">
+          {/* Animated Grid Background */}
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]" />
+          <div/>
+          {/* Floating Elements */}
+          <div className="container mx-auto px-6 relative z-10">
+          <motion.div
+            animate={{
+              y: [0, -20, 0],
+              rotate: [0, 5, 0],
+            }}
+            transition={{
+              duration: 5,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className="absolutemx-auto top-1/4 left-1/4 w-32 h-32 bg-orange-500/10 rounded-full blur-xl"
+          />
+          <motion.div
+            animate={{
+              y: [0, 20, 0],
+              rotate: [0, -5, 0],
+            }}
+            transition={{
+              duration: 7,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className="absolute bottom-1/4 right-1/4 w-40 h-40 bg-orange-500/10 rounded-full blur-xl"
+          />
         </div>
 
         {/* Main Content Container */}
@@ -19,13 +47,17 @@ const AboutPage = () => {
           <div className="max-w-5xl mx-auto text-center font-extralight">
             {/* Animated Badge */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="inline-block mb-8"
+              initial={{ scale: 0.9 }}
+              animate={{ scale: 1 }}
+              className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-orange-500/5 border border-orange-500/20 backdrop-blur-sm mb-6"
             >
-              <span className="text-sm text-orange-400 tracking-wider uppercase bg-orange-500/5 px-4 py-2 rounded-full border border-orange-500/10">
-                About Us
-              </span>
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+              >
+                <Sparkles className="w-4 h-4 text-orange-500" />
+              </motion.div>
+              <span className="text-orange-500  text-xs sm:text-sm font-normal">About Us</span>
             </motion.div>
 
             {/* Main Heading */}
@@ -146,7 +178,7 @@ const AboutPage = () => {
           </motion.div>
 
         </div>
-
+</div>
 
       </section>
 

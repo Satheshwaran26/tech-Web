@@ -97,7 +97,6 @@ const Footer = () => {
             ))}
           </div>
         </div>
-
         {/* Bottom Section */}
         <div className="relative">
           <div className="absolute inset-0"></div>

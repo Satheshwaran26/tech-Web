@@ -27,7 +27,7 @@ const TermsAndConditions: React.FC = () => {
           <h2 className="text-3xl font-extralight text-[#ffffff] mt-6 mb-2">Service Availability</h2>
           <ul className="list-disc ml-6">
             <li>We strive to provide accurate and up-to-date information regarding our technology solutions and availability. However, service offerings are subject to change based on technological advancements and market conditions.</li>
-            <li>We reserve the right to modify existing services or introduce new features to better serve our clients' needs. In cases where significant changes affect your current service agreement, we will provide reasonable notice.</li>
+            <li>We reserve the right to modify existing services or introduce new features to better serve our clients&apos; needs. In cases where significant changes affect your current service agreement, we will provide reasonable notice.</li>
           </ul>
 
           <h2 className="text-3xl font-extralight text-[#ffffff] mt-6 mb-2">Payment Policies</h2>

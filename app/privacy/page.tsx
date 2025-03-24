@@ -22,7 +22,7 @@ const PrivacyPolicy: React.FC = () => {
         <h2 className="text-3xl font-extralight text-[#ffffff] mt-6 mb-2">Use of Information</h2>
         <ul className="list-disc ml-6">
           <li>We use your information to deliver and improve our technology solutions, provide technical support, send relevant updates about our services, and maintain our relationship with you.</li>
-          <li>We analyze usage patterns and performance metrics to enhance our platform's functionality, security, and user experience.</li>
+          <li>We analyze usage patterns and performance metrics to enhance our platform&apos;s functionality, security, and user experience.</li>
         </ul>
 
         <h2 className="text-3xl font-extralight text-[#ffffff] mt-6 mb-2">Disclosure of Information</h2>
@@ -33,7 +33,7 @@ const PrivacyPolicy: React.FC = () => {
 
         <h2 className="text-3xl font-extralight text-[#ffffff] mt-6 mb-2">Data Security</h2>
         <ul className="list-disc ml-6">
-          <li>We implement industry-standard security measures including encryption, access controls, and regular security assessments to protect your data from unauthorized access or breach.</li>
+          <li>We implement industry-standard security measures including encryption, secure development practices, and regular security audits to protect your data.</li>
           <li>While we employ advanced security practices, no digital transmission or storage system is 100% secure. We continuously update our security protocols to address emerging threats.</li>
         </ul>
 

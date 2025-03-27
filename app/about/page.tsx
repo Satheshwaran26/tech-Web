@@ -3,6 +3,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { FaGlobe, FaMobile, FaLaptopCode, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import { Sparkles } from 'lucide-react';
+import Link from 'next/link';
 const AboutPage = () => {
   return (
     <div className="min-h-screen bg-[#080808]">
@@ -614,17 +615,18 @@ const AboutPage = () => {
             <h2 className="text-5xl font-light bg-gradient-to-r from-orange-400  to-red-500 text-transparent bg-clip-text">
               Ready to Transform Your Business?
             </h2>
-            <p className="text-xl text-gray-400">
+            <p className="text-xl text-gray-400 pb-4">
               Let&apos;s create something extraordinary together. Get in touch with us today.
             </p>
 
-           
+            <Link href="/contact">
             <button className="relative py-4 px-8 text-xl font-normal rounded-full shadow-lg transition-all duration-300 transform border-[#1c1c1c] hover:scale-105 hover:shadow-2xl border">
           <span className="bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent">
           Start Your Journey
           </span>
           
         </button>
+        </Link>
           </motion.div>
         </motion.div>
       </section>

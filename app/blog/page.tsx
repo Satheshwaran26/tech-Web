@@ -1,5 +1,5 @@
 "use client";
-
+import Link from 'next/link';
 import { useState } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -136,7 +136,7 @@ const BlogPage = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
               className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 pt-4 sm:pt-6 md:pt-8 px-4"
-            >
+            > <Link href="/contact">
               <button className="group px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-orange-500 to-red-500 rounded-xl text-white 
                                shadow-lg shadow-orange-500/20 hover:shadow-orange-500/40 transition-all duration-300
                                flex items-center justify-center gap-2 font-medium text-sm sm:text-base"
@@ -144,6 +144,7 @@ const BlogPage = () => {
                 <Plus className="w-5 h-5 group-hover:rotate-90 transition-transform duration-300" />
                 <span>Create Blog</span>
               </button>
+              </Link>
               <button className="group px-6 sm:px-8 py-3 sm:py-4 bg-white/5 border border-orange-500/20 rounded-xl text-white 
                                hover:bg-white/10 transition-all duration-300 backdrop-blur-sm
                                flex items-center justify-center gap-2 font-medium text-sm sm:text-base"

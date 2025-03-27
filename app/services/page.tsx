@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { FaCode, FaMobile, FaDesktop,  FaRocket, } from 'react-icons/fa';
 import { Sparkles } from 'lucide-react';
-
+import Link from 'next/link';
 const ServicesPage = () => {
   return (
     <div className="min-h-screen bg-[#080808]">
@@ -457,6 +457,7 @@ const ServicesPage = () => {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
+              <Link href="/contact">
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
@@ -465,6 +466,8 @@ const ServicesPage = () => {
                 >
                   Start Your Project 
                 </motion.button>
+                </Link>
+                <Link href="/contact">
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
@@ -473,6 +476,7 @@ const ServicesPage = () => {
                 >
                   Schedule a Call
                 </motion.button>
+                </Link>
               </div>
             </div>
           </div>

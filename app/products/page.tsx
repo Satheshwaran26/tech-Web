@@ -1,8 +1,7 @@
 "use client";
-
+import Link from 'next/link';
 import { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import { Compass, Code, ShieldCheck,Sparkles, Zap, ChevronRight, Star, Settings, Cloud, BarChart3 } from "lucide-react";
 
@@ -37,7 +36,7 @@ export default function ProductPage() {
       id: 2,
       name: "Smart Analytics Dashboard",
       description: "Comprehensive data visualization and business intelligence platform.",
-      image: "/images/analytics.jpg",
+      image: "/images/dashp.jpg",
       price: "$399",
       features: ["Real-time metrics", "Interactive charts", "Custom reports", "Trend analysis"]
     },
@@ -45,7 +44,7 @@ export default function ProductPage() {
       id: 3,
       name: "Billing Software Suite",
       description: "Complete solution for invoicing, payments, and financial management.",
-      image: "/images/billing.jpg",
+      image: "/images/image.png",
       price: "$299",
       features: ["Automated invoicing", "Payment tracking", "Tax calculations", "Financial reports"]
     }
@@ -161,14 +160,16 @@ export default function ProductPage() {
               >
                 Explore Products
               </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-4  rounded-full text-gray-400 font-extralight backdrop-blur-sm 
-                         border border-white/10"
-              >
-                Contact Sales
-              </motion.button>
+              <Link href="/contact">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-8 py-4  rounded-full text-gray-400 font-extralight backdrop-blur-sm 
+                           border border-white/10"
+                >
+                  Contact Sales
+                </motion.button>
+              </Link>
             </motion.div>
           </motion.div>
           {/* Mouse Scroll Indicator */}
@@ -257,16 +258,6 @@ export default function ProductPage() {
                 variants={fadeIn}
                 className="bg-[#111111] rounded-xl overflow-hidden border border-[#222] hover:border-orange-500/30 transition-all duration-300 group"
               >
-                <div className="relative h-48 overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10"></div>
-                  <Image
-                    src={product.image}
-                    alt={product.name}
-                    width={500}
-                    height={300}
-                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
                 <div className="p-6">
                   <h3 className="text-xl font-medium mb-2 bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
                     {product.name}

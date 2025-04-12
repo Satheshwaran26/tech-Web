@@ -9,7 +9,7 @@ const IdeaSection: React.FC = () => {
   Have an Idea?
 </h1>
 
-        <p className="text-gray-400 text-lg font-light">
+        <p className="text-gray-400 text-lg font-light mb-4">
           We&apos;re dedicated to transforming businesses through innovative digital solutions.
         </p>
         <Link href="/contact">

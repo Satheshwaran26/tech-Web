@@ -96,19 +96,19 @@ const AboutPage = () => {
                   animate={{ scale: 1 }}
                   transition={{ delay: 0.6 }}
                 >
-                  500+
+                  100+
                 </motion.h3>
                 <p className="text-gray-400">Projects Delivered</p>
               </div>
 
               <div className="text-center">
                 <motion.h3
-                  className="text-4xl font-light text-[#343434] mb-2"
+                  className="text-4xl font-light text-[#666666] mb-2"
                   initial={{ scale: 0.5 }}
                   animate={{ scale: 1 }}
                   transition={{ delay: 0.7 }}
                 >
-                  15+
+                  2+
                 </motion.h3>
                 <p className="text-gray-400">Years Experience</p>
               </div>
@@ -120,7 +120,7 @@ const AboutPage = () => {
                   animate={{ scale: 1 }}
                   transition={{ delay: 0.8 }}
                 >
-                  200+
+                  100+
                 </motion.h3>
                 <p className="text-gray-400">Happy Clients</p>
               </div>
@@ -280,8 +280,8 @@ const AboutPage = () => {
 
                   {/* Image */}
                   <Image
-                    src="/images/tino.jpg"  // Make sure this path matches your image location
-                    alt="Tino Britty J"
+                    src="/images/a.jpg"  // Make sure this path matches your image location
+                    alt="sathes"
                     fill
                     className="object-cover relative z-10"
                     sizes="(max-width: 768px) 100vw, 50vw"
@@ -661,7 +661,7 @@ const teamMembers = [
   {
     name: "Sarah Johnson",
     role: "Senior Developer",
-    image: "/images/tino.jpg",
+    image: "/images/t4.png",
     socialLinks: [
       { icon: <FaLinkedin className="w-4 h-4" />, link: "#" },
       { icon: <FaTwitter className="w-4 h-4" />, link: "#" },
@@ -670,7 +670,7 @@ const teamMembers = [
   {
     name: "Michael Chen",
     role: "UI/UX Designer",
-    image: "/images/tino.jpg",
+    image: "/images/t2.jpeg",
     socialLinks: [
       { icon: <FaLinkedin className="w-4 h-4" />, link: "#" },
       { icon: <FaTwitter className="w-4 h-4" />, link: "#" },
@@ -679,7 +679,7 @@ const teamMembers = [
   {
     name: "Emily Rodriguez",
     role: "Full Stack Developer",
-    image: "/images/tino.jpg",
+    image: "/images/t3.jpeg",
     socialLinks: [
       { icon: <FaLinkedin className="w-4 h-4" />, link: "#" },
       { icon: <FaTwitter className="w-4 h-4" />, link: "#" },
@@ -688,7 +688,7 @@ const teamMembers = [
   {
     name: "David Kim",
     role: "Backend Developer",
-    image: "/images/tino.jpg",
+    image: "/images/t5.jpg",
     socialLinks: [
       { icon: <FaLinkedin className="w-4 h-4" />, link: "#" },
       { icon: <FaTwitter className="w-4 h-4" />, link: "#" },

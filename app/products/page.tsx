@@ -563,11 +563,7 @@ export default function ProductPage() {
                   Schedule a Demo
                 </button>
               </Link>
-              <Link href="/product/compare">
-                <button className="px-8 py-4 border border-orange-500/30 rounded-lg text-orange-400 hover:bg-orange-500/10 transition-all hover:-translate-y-1">
-                  Compare Plans
-                </button>
-              </Link>
+           
             </div>
           </motion.div>
         </div>

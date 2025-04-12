@@ -18,8 +18,9 @@ const BlogPage = () => {
       category: "AI Development",
       readTime: "5 min",
       author: "John Doe",
+      authorImage: "/images/t2.jpeg",
       date: "Mar 15, 2024",
-      image: "/images/blog/post-1.jpg"
+      image: "/images/aidev.jpg"
     },
     {
       id: 2,
@@ -28,8 +29,9 @@ const BlogPage = () => {
       category: "AI Development",
       readTime: "7 min",
       author: "Jane Smith",
+      authorImage: "/images/t1.jpeg",
       date: "Mar 14, 2024",
-      image: "/images/blog/post-2.jpg"
+      image: "/images/ml.jpg"
     },
     {
       id: 3,
@@ -38,8 +40,9 @@ const BlogPage = () => {
       category: "Development",
       readTime: "4 min",
       author: "Mike Wilson",
+      authorImage: "/images/t2.jpeg",
       date: "Mar 13, 2024",
-      image: "/images/blog/post-3.jpg"
+      image: "/images/webdev.jpg"
     },
     {
       id: 4,
@@ -48,8 +51,9 @@ const BlogPage = () => {
       category: "AI Development",
       readTime: "8 min",
       author: "Sarah Lee",
+      authorImage: "/images/t1.jpeg",
       date: "Mar 12, 2024",
-      image: "/images/blog/post-4.jpg"
+      image: "/images/neural.jpg"
     },
     {
       id: 5,
@@ -58,8 +62,9 @@ const BlogPage = () => {
       category: "Design",
       readTime: "6 min",
       author: "Alex Brown",
+      authorImage: "/images/t3.jpeg",
       date: "Mar 11, 2024",
-      image: "/images/blog/post-5.jpg"
+      image: "/images/uiux.jpg"
     },
     {
       id: 6,
@@ -68,8 +73,9 @@ const BlogPage = () => {
       category: "AI Development",
       readTime: "9 min",
       author: "Emily Chen",
+      authorImage: "/images/t2.jpeg",
       date: "Mar 10, 2024",
-      image: "/images/blog/post-6.jpg"
+      image: "/images/healthai.jpg"
     }
   ];
 
@@ -84,8 +90,7 @@ const BlogPage = () => {
         {/* Enhanced Background */}
         <div className="absolute inset-0">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]" />
-          {/* <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-orange-500/20 rounded-full blur-[120px]" />
-          <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-orange-500/20 rounded-full blur-[120px]" /> */}
+         
         </div>
 
         <div className="container mx-auto px-4 relative">
@@ -273,9 +278,20 @@ const BlogPage = () => {
                   </div>
 
                   <div className="p-4 sm:p-6 space-y-3 sm:space-y-4">
-                    <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-400">
-                      <Clock className="w-4 h-4 text-orange-500" />
-                      {post.readTime}
+                    <div className="flex items-center gap-2 text-sm text-gray-400">
+                      <div className="relative w-10 h-10 rounded-full overflow-hidden">
+                        <Image
+                          src={post.authorImage}
+                          alt={post.author}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                      <span>{post.author}</span>
+                      <span>•</span>
+                      <span>{post.date}</span>
+                      <span>•</span>
+                      <span>{post.readTime} read</span>
                     </div>
 
                     <h3 className="text-lg sm:text-xl font-medium text-white group-hover:text-orange-500 transition-colors">
@@ -289,14 +305,8 @@ const BlogPage = () => {
                     <div className="flex items-center justify-between pt-3 sm:pt-4 border-t border-orange-500/10">
                       <div className="flex items-center gap-2 sm:gap-3">
                         <div className="relative">
-                          <Image
-                            src="/images/avatars/author1.jpg"
-                            alt={post.author}
-                            width={32}
-                            height={32}
-                            className="rounded-full ring-2 ring-orange-500/20 sm:w-10 sm:h-10"
-                          />
-                          <div className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-green-500 rounded-full border-2 border-[#111111]" />
+                        
+                          
                         </div>
                         <div>
                           <p className="text-xs sm:text-sm font-medium text-white">{post.author}</p>

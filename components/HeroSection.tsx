@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import Link from 'next/link';
 
 const HeroSection: React.FC = () => {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
@@ -61,20 +62,22 @@ const HeroSection: React.FC = () => {
           {/* Product Selector and Go Button */}
           <div className="flex flex-wrap justify-center gap-4 pb-6">
             {/* Get Started Button */}
-            <button
-              onClick={() => alert("Get Started clicked!")}
-              className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-400 px-4 py-2 text-base sm:text-lg flex items-center font-light transition-colors border-[#212020] border rounded-lg"
-            >
-              Get Started
-            </button>
+            <Link href="/products">
+              <button
+                className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-400 px-4 py-2 text-base sm:text-lg flex items-center font-light transition-colors border-[#212020] border rounded-lg"
+              >
+                View Products
+              </button>
+            </Link>
 
             {/* View More Button */}
-            <button
-              onClick={() => alert("View More clicked!")}
-              className="font-extralight border-[#212020] border text-gray-200 px-6 py-2 text-base sm:text-lg rounded-lg flex items-center transition-colors"
-            >
-              View More
-            </button>
+            <Link href="/about">
+              <button
+                className="font-extralight border-[#212020] border text-gray-200 px-6 py-2 text-base sm:text-lg rounded-lg flex items-center transition-colors"
+              >
+                About Us
+              </button>
+            </Link>
           </div>
 
           {/* Features List */}

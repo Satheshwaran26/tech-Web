@@ -5,25 +5,61 @@ import { motion } from 'framer-motion';
 import { FaUser, FaEnvelope, FaComment, FaPhone, FaMapMarkerAlt, FaClock, FaArrowRight } from 'react-icons/fa';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
   const [focused, setFocused] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: 'success' | 'error' | null;
+    message: string;
+  }>({ type: null, message: '' });
   const router = useRouter();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormData({ name: '', email: '', message: '' });
-    }, 3000);
+    setIsSubmitting(true);
+    setSubmitStatus({ type: null, message: '' });
+
+    try {
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        message: formData.message,
+      };
+
+      const response = await emailjs.send(
+        'service_66cwvve', // Replace with your service ID
+        'template_a9nxh81', // Replace with your template ID
+        templateParams,
+        'N75TQ_OKvBPrV3Z1J' // Replace with your public key
+      );
+
+      if (response.status === 200) {
+        setSubmitStatus({
+          type: 'success',
+          message: 'Thank you for your message! We will get back to you soon.'
+        });
+        setFormData({ name: '', email: '', message: '' });
+        setSubmitted(true);
+        setTimeout(() => {
+          setSubmitted(false);
+        }, 3000);
+      }
+    } catch (error) {
+      setSubmitStatus({
+        type: 'error',
+        message: 'Sorry, there was an error sending your message. Please try again later.'
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   // Smooth scroll function
@@ -180,7 +216,7 @@ const Contact = () => {
               <div className="relative">
                 <div className="flex items-center mb-6">
                   <div className="w-14 h-14 rounded-full border-2 border-orange-500/30 overflow-hidden mr-4 flex-shrink-0">
-                    <div className="w-full h-full bg-gradient-to-r from-orange-500/50 to-red-500/50"></div>
+                    <img src="./images/a.jpg" />
                   </div>
           <div>
                     <p className="text-white text-lg font-light">Satheshwaran V</p>
@@ -266,19 +302,38 @@ const Contact = () => {
       ></textarea>
     </div>
 
-                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                  <p className="text-xs sm:text-sm text-gray-400">By submitting, you agree to our <span className="text-orange-500 cursor-pointer hover:underline">Terms of Service</span></p>
-                  
-                  <motion.button 
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    type="submit"
-                    className={`relative px-6 sm:px-8 py-3 rounded-lg overflow-hidden group ${submitted ? 'bg-green-500' : 'bg-gradient-to-r from-orange-500 to-red-500 animate-gradient'} text-white font-medium transition-all`}
-                  >
-                    {submitted ? 'Message Sent!' : 'Send Message'}
-                    <div className="absolute inset-0 bg-gradient-to-r from-orange-500/0 to-white/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                  </motion.button>
-                </div>
+    {submitStatus.type && (
+      <div
+        className={`mb-4 p-4 rounded-lg ${
+          submitStatus.type === 'success'
+            ? 'bg-green-500/10 text-green-400'
+            : 'bg-red-500/10 text-red-400'
+        }`}
+      >
+        {submitStatus.message}
+      </div>
+    )}
+
+    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      <p className="text-xs sm:text-sm text-gray-400">By submitting, you agree to our <span className="text-orange-500 cursor-pointer hover:underline">Terms of Service</span></p>
+      
+      <motion.button 
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        type="submit"
+        disabled={isSubmitting}
+        className={`relative px-6 sm:px-8 py-3 rounded-lg overflow-hidden group ${
+          isSubmitting 
+            ? 'bg-gray-700 cursor-not-allowed' 
+            : submitted 
+              ? 'bg-green-500' 
+              : 'bg-gradient-to-r from-orange-500 to-red-500 animate-gradient'
+        } text-white font-medium transition-all`}
+      >
+        {isSubmitting ? 'Sending...' : submitted ? 'Message Sent!' : 'Send Message'}
+        <div className="absolute inset-0 bg-gradient-to-r from-orange-500/0 to-white/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+      </motion.button>
+    </div>
   </form>
 </div>
 

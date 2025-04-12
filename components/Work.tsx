@@ -7,30 +7,29 @@ import "tailwindcss/tailwind.css";
 
 const worksData = [
   {
-    title: "Demo Portal",
-    description: "Screenshot of Demo Portal showing a calendar interface with various features.",
-    img: "/images/site.png",
-    tags: ["Realtime Matching", "Calendar sync", "Notifications", "Reports"],
-  },
-  {
-    title: "Freelance Platform",
-    description: "Screenshot of Freelance platform showing a dark-themed interface with various features.",
-    img: "/images/site.png",
-    tags: ["Freelance Directory", "Custom Quotation", "Track Progress", "Rating & Reviews"],
-  },
-  {
-    title: "E-Learning Hub",
-    description: "Screenshot of an E-Learning platform with interactive courses and user-friendly design.",
-    img: "/images/site.png",
-    tags: ["Interactive Courses", "User Tracking", "Video Tutorials", "Certifications"],
-  },
-  {
     title: "E-Commerce Store",
-    description: "Screenshot of an online store featuring product listings and checkout functionality.",
-    img: "/images/site.png",
-    tags: ["Product Catalog", "Secure Payments", "Customer Reviews", "Order Tracking"],
+    description: "A modern e-commerce platform with seamless shopping experience and secure payment integration.",
+    img: "/images/ecommerce.jpg",
+    tags: ["Product Catalog", "Secure Payments", "Order Tracking", "Customer Reviews"],
   },
- 
+  {
+    title: "E-Learning Platform",
+    description: "An interactive learning management system with video courses and progress tracking.",
+    img: "/images/elearning.jpg",
+    tags: ["Video Courses", "Progress Tracking", "Certifications", "Interactive Quizzes"],
+  },
+  {
+    title: "Resume Builder",
+    description: "A professional resume creation tool with modern templates and AI-powered suggestions.",
+    img: "/images/resumai.png",
+    tags: ["AI Assistance", "Modern Templates", "Export Options", "ATS Optimization"],
+  },
+  {
+    title: "Social Media Dashboard",
+    description: "A comprehensive analytics dashboard for social media management and performance tracking.",
+    img: "/images/dash.png",
+    tags: ["Analytics", "Content Planning", "Engagement Metrics", "Performance Reports"],
+  },
 ];
 
 const Works = () => {
@@ -74,10 +73,12 @@ const Works = () => {
 
             {/* Content Section */}
             <div className="px-7 py-2 pb-4">
-              <h2 className="text-2xl pb-1 font-semibold text-gray-300 mb-2">{work.title}</h2>
+            <h3 className="text-xl font-light text-transparent bg-clip-text bg-gradient-to-r from-orange-400  to-red-600 mb-2 ">
+                    {work.title}
+                  </h3>
               <div className="flex flex-wrap gap-2 mb-4">
                 {work.tags.map((tag, tagIndex) => (
-                  <span key={tagIndex} className="text-gray-400 rounded-full px-3 py-1 text-sm border border-gray-600/20">
+                  <span key={tagIndex} className="text-xs px-2 py-1 rounded-full bg-white/5 text-gray-300 border border-white/10">
                     {tag}
                   </span>
                 ))}

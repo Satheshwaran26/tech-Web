@@ -35,7 +35,7 @@ const Footer = () => {
             </p>
             <div className="flex gap-4 mb-8 md:mb-0">
               {[
-                { icon: Linkedin, href: "#", ariaLabel: "LinkedIn" },
+                { icon: Linkedin, href: "https://www.linkedin.com/in/sathes-waran-v/" , ariaLabel: "LinkedIn" },
                 { icon: Instagram, href: "#", ariaLabel: "Instagram" },
                 { icon: Github, href: "#", ariaLabel: "GitHub" }
               ].map((social, index) => (
@@ -43,6 +43,8 @@ const Footer = () => {
                   key={index}
                   href={social.href}
                   aria-label={social.ariaLabel}
+                  target={social.href.startsWith("http") ? "_blank" : undefined}
+                  rel={social.href.startsWith("http") ? "noopener noreferrer" : undefined}
                   className={`w-8 h-8 flex items-center justify-center rounded-lg bg-[#111111] 
                     relative overflow-hidden group
                     transform hover:-translate-y-1 hover:shadow-lg hover:shadow-orange-500/30
@@ -65,7 +67,7 @@ const Footer = () => {
             {[
               { 
                 title: "Product",
-                links: ["Remote Job", "Startup", "Investor & Board", "Company"]
+                links: ["Error Tech AI Model", "Smart Analytics Dashboard", "Billing Software Suite"]
               },
               { 
                 title: "Features",

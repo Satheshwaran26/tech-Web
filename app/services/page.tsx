@@ -88,21 +88,25 @@ const ServicesPage = () => {
               transition={{ delay: 0.5 }}
               className="flex justify-center gap-4"
             >
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-white text-transparent bg-clip-text  bg-gradient-to-r from-orange-400 to-red-500 rounded-full font-medium border hover:scale-105 hover:shadow-2xl  border-[#1c1c1c]"
-              >
-                Get Started
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-4  rounded-full text-gray-400 font-extralight backdrop-blur-sm 
-                         border border-white/10"
-              >
-                Learn More
-              </motion.button>
+              <Link href="/products">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-8 py-4 bg-white text-transparent bg-clip-text  bg-gradient-to-r from-orange-400 to-red-500 rounded-full font-medium border hover:scale-105 hover:shadow-2xl  border-[#1c1c1c]"
+                >
+                  View Products
+                </motion.button>
+              </Link>
+              <Link href="/contact">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-8 py-4  rounded-full text-gray-400 font-extralight backdrop-blur-sm 
+                           border border-white/10"
+                >
+                  Contact Us
+                </motion.button>
+              </Link>
             </motion.div>
           </motion.div>
           {/* Mouse Scroll Indicator */}
@@ -524,22 +528,23 @@ const services = [
 
 const projects = [
   {
-    title: "E-commerce Platform",
-    description: "Modern shopping experience with advanced features",
-    image: "/images/website.jpg",
-    technologies: ["React", "Node.js", "MongoDB"]
+    title: "E-Commerce Store",
+    description: "A modern e-commerce platform with seamless shopping experience and secure payment integration.",
+
+    image:"/images/ecommerce.jpg",
+    technologies: ["React.js", "TypeScript", "Tailwind CSS"]
   },
   {
-    title: "Mobile Banking App",
-    description: "Secure and intuitive mobile banking solution",
-    image: "/images/website.jpg",
-    technologies: ["React Native", "Firebase", "Redux"]
+    title: "E-Learning Platform",
+    description: "An interactive learning management system with video courses and progress tracking.",
+    image: "/images/elearning.jpg",
+    technologies: ["React.js", "TypeScript", "Tailwind CSS"]
   },
   {
-    title: "Enterprise Dashboard",
-    description: "Comprehensive analytics and management platform",
-    image: "/images/website.jpg",
-    technologies: ["Next.js", "TypeScript", "GraphQL"]
+    title: "Resume Builder",
+    description: "A professional resume creation tool with modern templates and AI-powered suggestions.",
+    image: "/images/resumai.png",
+    technologies: ["React.js", "TypeScript", "Tailwind CSS"]
   }
 ];
 

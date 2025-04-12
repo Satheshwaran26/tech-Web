@@ -5,10 +5,10 @@ import { motion } from 'framer-motion';
 import { TrendingUp, Users, Building, Award } from 'lucide-react';
 
 const stats = [
-  { value: 290, label: 'Employees', suffix: '+', icon: <Users className="w-6 h-6" /> },
-  { value: 103, label: 'Users', suffix: 'k+', icon: <TrendingUp className="w-6 h-6" /> },
-  { value: 2500, label: 'Customers', suffix: '+', icon: <Building className="w-6 h-6" /> },
-  { value: 16, label: 'Trainers', suffix: '', icon: <Award className="w-6 h-6" /> },
+  { value: 10, label: 'Employees', suffix: '+', icon: <Users className="w-6 h-6" /> },
+  { value: 100, label: 'Users', suffix: '+', icon: <TrendingUp className="w-6 h-6" /> },
+  { value: 300, label: 'Customers', suffix: '+', icon: <Building className="w-6 h-6" /> },
+  { value: 10, label: 'Trainers', suffix: '', icon: <Award className="w-6 h-6" /> },
 ];
 
 const Counter = ({ value, suffix }: { value: number; suffix: string }) => {

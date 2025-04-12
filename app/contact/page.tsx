@@ -53,10 +53,10 @@ const Contact = () => {
           setSubmitted(false);
         }, 3000);
       }
-    } catch (error: any) {
+    } catch (error: unknown) {
       setSubmitStatus({
         type: 'error',
-        message: 'Sorry, there was an error sending your message. Please try again later.'
+        message: `Sorry, there was an error sending your message. ${error instanceof Error ? error.message : 'Please try again later.'}`
       });
     } finally {
       setIsSubmitting(false);

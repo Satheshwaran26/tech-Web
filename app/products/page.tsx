@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Compass, Code, ShieldCheck,Sparkles, Zap, ChevronRight, Star, Settings, Cloud, BarChart3 } from "lucide-react";
-import { FaArrowRight, FaCheck } from 'react-icons/fa';
+
 
 export default function ProductPage() {
   const [activeTab, setActiveTab] = useState("features");

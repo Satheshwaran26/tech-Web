@@ -6,6 +6,7 @@ import { FaUser, FaEnvelope, FaComment, FaPhone, FaMapMarkerAlt, FaClock, FaArro
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import emailjs from '@emailjs/browser';
+import Image from 'next/image';
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -52,7 +53,7 @@ const Contact = () => {
           setSubmitted(false);
         }, 3000);
       }
-    } catch (error) {
+    } catch (error: any) {
       setSubmitStatus({
         type: 'error',
         message: 'Sorry, there was an error sending your message. Please try again later.'
@@ -216,7 +217,13 @@ const Contact = () => {
               <div className="relative">
                 <div className="flex items-center mb-6">
                   <div className="w-14 h-14 rounded-full border-2 border-orange-500/30 overflow-hidden mr-4 flex-shrink-0">
-                    <img src="./images/a.jpg" />
+                    <Image
+                      src="/images/a.jpg"
+                      alt="Satheshwaran V"
+                      width={56}
+                      height={56}
+                      className="object-cover"
+                    />
                   </div>
           <div>
                     <p className="text-white text-lg font-light">Satheshwaran V</p>

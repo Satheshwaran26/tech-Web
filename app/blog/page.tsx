@@ -3,8 +3,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import {  ArrowRight, Sparkles, MessageCircle, 
- Clock, Plus } from 'lucide-react';
+import { ArrowRight, Sparkles, MessageCircle, Plus } from 'lucide-react';
 
 const BlogPage = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
